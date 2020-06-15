@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>349</LabelID>
+    <LabelName>统计登录用户发帖总数_ALL</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>狗市场专用</LabelCate>
+    <LabelDesc />
+    <LabelParam />
+    <LabelTable>ZL_CommonModel</LabelTable>
+    <LabelField>count(*) as Nums</LabelField>
+    <LabelWhere>Status=99   and  Inputer='{ZL:GetuserName()/}'</LabelWhere>
+    <LabelOrder />
+    <LabelContent>{Field="Nums"/}</LabelContent>
+    <LabelCount>1</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>参数判断</Modeltypeinfo>
+    <addroot />
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_CommonModel","tb_s":""}</DataSourceType>
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

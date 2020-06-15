@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>371</LabelID>
+    <LabelName>输出用户组级ID</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>狗市场专用</LabelCate>
+    <LabelDesc />
+    <LabelParam />
+    <LabelTable>ZL_User LEFT JOIN ZL_Group ON ZL_User.GroupID=ZL_Group.GroupID</LabelTable>
+    <LabelField>ZL_Group.GroupID</LabelField>
+    <LabelWhere> ZL_User.UserID={ZL:GetuserID()/}</LabelWhere>
+    <LabelOrder />
+    <LabelContent>{Field="GroupID"/}</LabelContent>
+    <LabelCount>1</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>参数判断</Modeltypeinfo>
+    <addroot />
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_User","tb_s":"ZL_Group"}</DataSourceType>
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

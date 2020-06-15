@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta name="msapplication-TileColor" content="#1A0066"/>
+<meta name="msapplication-TileImage" content="/images/win8_symbol_140x140.png"/>
+<title>{$SiteName/}</title>
+{$MetaKeywords/}
+{$MetaDescription/}
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<script src="/js/scrolltopcontrol.js"></script>
+<script src="/JS/Controls/B_User.js"></script>
+<meta name="shenma-site-verification" content="443e4a7d86b030bd2631ab9947478358_1530713680"/>
+ </head>
+<body>
+<div class="top">
+  <div class="container">
+	<div class="row">
+	  <div class="col-xs-12 col-sm-6 top_l">
+	  <ul>
+		<li><a href="/user/">手机登录</a></li>
+		<li><a target="_blank" href="{ZL:GetNodeLinkUrl(15)/}">血统查询</a></li>
+		<li><a href="{ZL:GetInfoUrl(93)/}">精准推广</a></li>
+		<li><a href="{ZL:GetLastinfo(8)/}">会员服务</a></li>
+		</ul>
+	  </div>
+	  <div class="col-xs-12 col-sm-6 top_r">
+	  <ul>
+		<li><a href="/user/Content/MyContent">我的市场</a></li> | 
+		<li><a href="/User/">会员中心</a></li> | 
+		<li><a href="{ZL:GetNodeListUrl(8)/}">网站导航</a></li>
+	  </ul>
+	  </div>
+	</div>
+  </div>
+</div>
+<!-- nav end-->
+
+<header class="container header">
+<div class="row home_Pos">
+<div class="col-xs-12 col-sm-3 logo">
+<a href="/"><img src="{$LogoUrl/}" alt="{$SiteName/}"></a>
+</div>
+<div class="col-xs-12 col-sm-7 search_box">
+<div class="search_Box_i">
+<form class="form-inline" role="search" method="get" action="{ZL:GetNodeListUrl(1)/}" target="_blank">
+<div class="input-group">
+<input type="text" class="form-control" name="n1" placeholder="请输入狗狗品种">
+<input type="text" class="hidden_input" name="n2min" value="0">
+<input type="text" name="n2max" class="hidden_input" value="9999999">
+<span class="input-group-btn home_search_ss">
+<button type="submit" class="btn btn-success"><i class="fa fa-search"></i> 搜索</button>
+</span>
+</div><!-- /input-group -->
+</form>
+<span>
+热门犬种：
+<a href="{ZL:GetNodeListUrl(1)/}?n1=泰迪犬&n2max=999999&n2min=0">泰迪</a>
+<a href="{ZL:GetNodeListUrl(1)/}?n1=比格犬&n2max=999999&n2min=0">比格</a>
+<a href="{ZL:GetNodeListUrl(1)/}?n1=边牧犬&n2max=999999&n2min=0">边牧</a>
+<a href="{ZL:GetNodeListUrl(1)/}?n1=阿拉斯加犬&n2max=999999&n2min=0">阿拉斯加</a>
+</span>
+<span>热门城市：
+<a href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max=9999999&n2min=0&n3=北京">北京</a>
+<a href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max=9999999&n2min=0&n3=上海">上海</a>
+<a href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max=9999999&n2min=0&n3=天津">天津</a>
+<a href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max=9999999&n2min=0&n3=重庆">重庆</a>
+</span>
+</div>
+</div>
+<div class="col-xs-12 col-sm-2 top_header_r">
+<a href="/user/Content/AddContent?NodeID=1&ModelID=50" class="btn btn-success top_header_r_b">免费发布信息</a>
+<div class="changcon"><a href="/user/Content/MyContent?NodeId=1">修改/删除信息</a></div>
+</div>
+</div>
+</header>
+<!--top_header logo 和搜索end-->
+
+<nav class="navbar container my_nav">
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		<span class="sr-only">狗市场网</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	  </button>
+	</div>
+	<div class="navbar-collapse collapse home_Bottom_b" id="bs-example-navbar-collapse-1" aria-expanded="false" >
+	  <ul class="nav navbar-nav nav_list">
+		<li class=""><a href="/">首页</a></li>
+		<li><a href="{ZL:GetNodeLinkUrl(1)/}">我要买狗</a></li>
+		<li><a href="/user/Content/AddContent?NodeID=1&ModelID=50">我要卖狗</a></li>
+		<li><a href="{ZL:GetNodeLinkUrl(3)/}">各地狗市</a></li>
+		<li><a href="{ZL:GetNodeLinkUrl(4)/}">狗狗名片</a></li>
+		<li><a href="{ZL:GetNodeLinkUrl(5)/}">狗狗快讯</a></li>
+		<li><a href="{ZL:GetNodeLinkUrl(22)/}">问答</a></li>
+		<li><a href="{ZL:GetNodeLinkUrl(15)/}" target="_blank">血统查询</a></li>
+	  </ul>
+	  <ul class="nav navbar-nav navbar-right">
+		<li><a href="{ZL:GetNodeLinkUrl(16)/}" id="hone_Userapp">会员APP下载</a></li>
+	  </ul>
+	  </div>
+</nav>
+<!--nav end-->
+
+<section class="container wells">
+<div class="row wells_Dh">
+<div class="col-xs-12 col-sm-3 wells_l">
+<div class="wells_title bg-danger">小型犬</div>
+<ul>
+     {ZL.Label id="输出首页狗狗品种" GradeID="545" ShowNum="7"/}
+	<li><a href="{ZL:GetNodeLinkUrl(1)/}">...更多</a></li>
+</ul>
+<div class="wells_title bg-warning">中型犬</div>
+<ul class="home_Zxq">
+     {ZL.Label id="输出首页狗狗品种" GradeID="544" ShowNum="7"/}
+	<li><a href="{ZL:GetNodeLinkUrl(1)/}">...更多</a></li>
+</ul>
+<div class="wells_title bg-info">大型犬</div>
+<ul>
+     {ZL.Label id="输出首页狗狗品种" GradeID="543" ShowNum="7"/}
+	<li><a href="{ZL:GetNodeLinkUrl(1)/}">...更多</a></li>
+</ul>
+
+<div class="wells_title bg-primary">猛 犬</div>
+<ul>
+     {ZL.Label id="输出首页狗狗品种" GradeID="542" ShowNum="7"/}
+	<li><a href="{ZL:GetNodeLinkUrl(1)/}">...更多</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-7 wells_m home_Carousel">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active">1</li>
+        <li data-target="#carousel-example-generic" data-slide-to="1" class="">2</li>
+        <li data-target="#carousel-example-generic" data-slide-to="2" class="">3</li>
+        <li data-target="#carousel-example-generic" data-slide-to="3" class="">4</li>
+        <li data-target="#carousel-example-generic" data-slide-to="4" class="">5</li>
+
+
+      </ol>
+  <div class="carousel-inner" role="listbox">
+		
+<div class="item home_ad1 active">
+  <a href="https://user.qzone.qq.com/861803311"><img src="/uploadfiles/system/temp/20180612/20180612125712tsix.jpg" alt="专业国内、国际宠物托运，安全快速、知心托付"></a>
+</div>
+<div class="item home_ad2">
+  <a href="/Item/238.html"><img src="/uploadfiles/system/temp/20180612/20180612123930wu8c.jpg" alt="萌宠盛宴，好货不断，好主人厂家6.18日年中大促"></a>
+</div>
+<div class="item home_ad3">
+  <a href="/Item/87.html"><img src="/uploadfiles/image/20180323/6365742012984750657458233.jpg" alt="沈阳正荣德牧犬舍"></a>
+</div>
+    <div class="item home_ad3">
+  <a href="/Item/87.html"><img src="/uploadfiles/image/20180323/6365742012984750657458233.jpg" alt="沈阳正荣德牧犬舍"></a>
+    </div>
+    <div class="item home_ad3">
+  <a href="/Item/87.html"><img src="/uploadfiles/image/20180323/6365742012984750657458233.jpg" alt="沈阳正荣德牧犬舍"></a>
+    </div>
+      </div>
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+</div>
+
+<div class="col-xs-12 col-sm-2 wells_r">
+<strong><a href="{ZL:GetNodeLinkUrl(17)/}">全国知名犬舍品牌展示区</a></strong>
+<ul>
+
+  <li><a href="/Item/239.html"><img src="/uploadfiles/system/temp/20180612/20180612125712tsix.jpg" alt="专业国内、国际宠物托运，安全快速、知心托付" onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"></a></li>
+
+  <li><a href="/Item/238.html"><img src="/uploadfiles/system/temp/20180612/20180612123930wu8c.jpg" alt="萌宠盛宴，好货不断，好主人厂家6.18日年中大促" onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"></a></li>
+
+  <li><a href="/Item/87.html"><img src="/uploadfiles/image/20180323/6365742012984750657458233.jpg" alt="沈阳正荣德牧犬舍" onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"></a></li>
+
+  <li><a href="/Item/88.html"><img src="/uploadfiles/image/20180323/6365742053779877647226028.jpg" alt="北京犬舍" onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"></a></li>
+
+  <li><a href="/Item/89.html"><img src="/uploadfiles/system/temp/20180323/20180323165047k0mh.jpg" alt="卓越犬舍，国内知名品牌，信誉有保障" onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"></a></li>
+
+  <li><a href="/Item/90.html"><img src="/uploadfiles/image/20180323/6365742068270577887991057.jpg" alt="阳光犬舍，国内知名品牌，信誉有保障" onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"></a></li>
+
+  </ul>
+</div>
+</div>
+</section>
+<!--wells end-->
+
+<section class="container homeTip">
+<h1><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> 全国出售、转让信息</h1> 
+<p class="pull-right">>>提醒：请大家多了解行情，正确认识纯种狗狗的价格，所谓一分价一分货，低于1000元价格的狗狗，购买时需谨慎，以免贪图便宜上当受骗！</p>
+</section>
+<main class="container homelist">
+<div class="row">
+<ul class="m_content_list">
+{ZL.Label id="输出首页所有地区信息列表_已审核" ShowNum="31" TitleNum="57" /}
+</ul>
+</div>
+</main>
+<!--狗狗列表 end-->
+
+<section class="firendsite">
+<div class="container">
+<strong>友情链接</strong>
+<ul>
+{ZL.Label id="友情链接列表" ShowNum="34" NodeID="9" /}
+</ul>
+</div>
+</section>
+<!--firendsite-->
+
+<footer class="container footer">
+<ul>
+	<li><a href="{ZL:GetInfoUrl(1)/}">关于狗市</a></li> |
+	<li><a href="{ZL:GetInfoUrl(2)/}">英才招聘</a></li> |
+	<li><a href="{ZL:GetInfoUrl(3)/}">联系我们</a></li> |
+	<li><a href="{ZL:GetNodeListUrl(8)/}">网站地图</a></li> |
+	<li><a href="/guest/">意见反馈</a></li> |
+	<li><a href="#">互联网违法和不良信息举报电话： 0000-00000000</a></li> 
+</ul>
+<p>
+{$Copyright/}
+</p>
+</footer>
+<!--footer end-->
+
+<script src="{$CssDir/}layer/layer.js"></script>
+<script>
+	//home ad
+$(".home_ad1").addClass("active");
+	
+	
+var buser = new B_User();//会员ajax登录状态需要结合JS/Controls/B_User.js引用同步生效
+buser.IsLogged(function(data,flag){
+	if(flag){
+		data=JSON.parse(data);
+		$(".top_r ul").prepend('<li><a href="/User/"><i class="fa z01-icon095"></i> {ZL:GetuserName()/}</a></li> | <li><a href="/User/User/LogOut" ><i class="fa fa-sign-out" aria-hidden="true"></i> 退出</a></li> ');
+		//$(".top_r  .dropdown-toggle").html("<i class='fa fa-user' aria-hidden='true'></i> ")
+	}
+	else{
+		$(".top_r ul").prepend('<li><a href="/User/">登录</a></li>  | <li><a href="/User/Register">注册</a></li>');
+	}
+});
+
+function LogoutFun(){
+	buser.Logout(function(){location=location;});
+}
+
+
+
+/*字符串处理*/
+var ulindex= $(".m_content_list li").length;
+for(var i=1;i<=ulindex;i++){
+$(".diqu"+i).html($(".diqu"+i).html().replace(/省/,""));
+}
+
+
+//顶部导航选择状态
+$("#bs-example-navbar-collapse-1 li").eq("0").addClass("active");
+
+</script>
+</body>
+</html>

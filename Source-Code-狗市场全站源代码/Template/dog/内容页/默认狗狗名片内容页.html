@@ -1,0 +1,129 @@
+{ZL.Source id="狗狗名片数据源标签"/}<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="msapplication-TileColor" content="#1A0066"/>
+<meta name="msapplication-TileImage" content="/images/win8_symbol_140x140.png"/>
+<title>{SField sid="狗狗名片数据源标签" FD="Title" page="0"/}_{$SiteName/}</title>
+{$MetaKeywords/}
+{$MetaDescription/}
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<script src="/js/scrolltopcontrol.js"></script>
+<script src="/JS/Controls/B_User.js"></script>
+</head>
+<body>
+{ZL.Label id="全站头部"/}
+<div class="news_body">
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-md-9">
+
+<div class="container my_Bread">
+<nav aria-label="breadcrumb" role="navigation" >
+<ol class="breadcrumb">
+<li class="breadcrumb-item">当前位置：</li>
+<li class="breadcrumb-item"><a href="/">狗市场</a></li>
+{ZL.Label id="输出多级节点导航_V4" NodeID="{SField sid="狗狗名片数据源标签" FD="NodeID" page="0"/}" ShowNum="30" /}
+</ol>
+</nav>
+</div>
+<!--面包屑 end-->
+
+
+<div class="m_Content_l">
+<h1>{SField sid="狗狗名片数据源标签" FD="Title" page="0"/}</h1>
+<div class="m_Abbr">
+ <span id="CreateTime">发表于：{ZL:FormatDate({SField sid="狗狗名片数据源标签" FD="CreateTime" page="0"/},yyyy-MM-dd)/}</span> <span id="Hits">浏览数：<SCRIPT language=javascript src="/Common/GetHits.aspx?id={SField sid="狗狗名片数据源标签" FD="GeneralID" page="0"/}"></SCRIPT> 
+<span id="favs"><a href="/user/content/addtofav?infoid={SField sid="狗狗名片数据源标签" FD="GeneralID"/}&type=1&title={SField sid="狗狗名片数据源标签" FD="Title" page="0"/}&url={$SiteURL/}/item/{SField sid="狗狗名片数据源标签" FD="GeneralID" page="0"/}.aspx" target="_blank"><i class="fa fa-heart-o" aria-hidden="true"></i> 收藏</a></SCRIPT>  <a href="/Class_100/NodePage.html?t={SField sid="狗狗名片数据源标签" FD="Title" page="0"/}-来自{$SiteName/}&urls={$SiteURL/}/item/{SField sid="狗狗名片数据源标签" FD="GeneralID" page="0"/}.aspx" target="_blank"><i class="fa  fa-share-alt-square"></i>分享网址</a></span>
+</div>
+
+<div class="m_Content_info">
+<strong>基本信息栏</strong>
+<ul>
+<li>品种：<small>{SField sid="狗狗名片数据源标签" FD="Title" page="0"/}</small></li>
+<li>性格：<small>{SField sid="狗狗名片数据源标签" FD="ggxg" page="0"/}</small></li>
+<li>易患病：<small>{SField sid="狗狗名片数据源标签" FD="yhb" page="0"/}</small></li>
+<li>价格：<small>{SField sid="狗狗名片数据源标签" FD="jg" page="0"/}</small></li>
+<li>寿命：<small>{SField sid="狗狗名片数据源标签" FD="sm" page="0"/}</small></li>
+</ul>
+<div class="clearfix"></div>
+</div>
+
+
+<div class="m_content_img">
+<strong>狗狗图册</strong>
+<ul>
+</ul>
+<div class="clearfix"></div>
+</div>
+
+<div class="m_Content">{SField sid="狗狗名片数据源标签" FD="ggjs" page="0"/}</div>
+<div id="T_page"></div>
+</div>
+
+
+</div>
+<div class="col-xs-12 col-md-3">
+
+<div class="news_list">
+<div class="news_list_t"><h2>猜你喜欢</h2><div class="clearfix"></div></div>
+<div class="news_list_c">
+<ul class="list-unstyled">
+<!--
+<li>
+	<img src="/Template/dog/style/Images/dog5.jpg" alt="">
+	<p><a href="#">极品萨摩耶在这里，保障纯种和健康、十佳犬</a></p>
+	<span>2400元</span>
+</li>
+-->
+{ZL.Label id="输出内容页右侧推荐_狗狗" NodeID="1" ShowNum="4" /}
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!--主体结束 -->
+<div class="Assis_Div"></div>
+
+{ZL.Label id="全站底部"/}
+<script>
+//输出狗狗图册
+var imgjosn='{SField sid="狗狗名片数据源标签" FD="ggtp" page="0"/}';
+var imgs = eval(imgjosn);
+var flieurl ="{$UploadDir/}";
+for(var i=0;i<5;i++)//只显示4张
+{
+$(".m_content_img ul").prepend('<li><img src='+flieurl+imgs[i].url+'  alt=""></li>')
+}
+
+var buser = new B_User();//会员ajax登录状态需要结合JS/Controls/B_User.js引用同步生效
+buser.IsLogged(function(data,flag){
+	if(flag){
+		data=JSON.parse(data);
+		$(".top_r ul").append('<li><a href="/User/User/LogOut" ><i class="fa fa-sign-out" aria-hidden="true"></i> 退出</a></li> | <li><a href="/User/"><i class="fa z01-icon095"></i> {ZL:GetuserName()/}</a></li>');
+		//$(".top_r  .dropdown-toggle").html("<i class='fa fa-user' aria-hidden='true'></i> ")
+		$(".nav_user>a").html(data.UserName);
+		$(".nav_user .dropdown-menu a:nth-child(1)").html("会员中心");
+		$(".nav_user .dropdown-menu a:nth-child(2)").remove();
+		$(".nav_user .dropdown-menu a:nth-child(3)").addClass("d-block");
+		$(".nav_user .dropdown-menu a:nth-child(2)").addClass("d-block");
+        $("#iframe_comm").show();
+	}
+	else{
+		$(".top_r ul").append(' <li><a href="/User/Register">注册</a></li> | <li><a href="/User/">登录</a></li>');
+	}
+});
+
+function LogoutFun(){
+	buser.Logout(function(){location=location;});
+}
+//顶部导航选择状态
+$(function(){
+$("#bs-example-navbar-collapse-1 li").eq("4").addClass("active");
+})
+</script>
+</body>
+</html>
+<script type="text/javascript" src="/JS/Controls/ZL_Dialog.js"></script>

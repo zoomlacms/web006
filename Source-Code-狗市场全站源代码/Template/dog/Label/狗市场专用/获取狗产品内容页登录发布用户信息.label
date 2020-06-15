@@ -1,0 +1,41 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>357</LabelID>
+    <LabelName>获取狗产品内容页登录发布用户信息</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>狗市场专用</LabelCate>
+    <LabelDesc>当前登录用户信息</LabelDesc>
+    <LabelParam>UserName,0,1,用户名称|diqu,,1,指定地区</LabelParam>
+    <LabelTable>ZL_User LEFT JOIN ZL_UserBase ON ZL_User.UserID=ZL_UserBase.UserID</LabelTable>
+    <LabelField>UserName,RegTime,UserFace,Province,City,County</LabelField>
+    <LabelWhere> ZL_User.UserName='@UserName'</LabelWhere>
+    <LabelOrder />
+    <LabelContent>&lt;h3&gt;卖家基本信息&lt;/h3&gt;
+&lt;div class="shop_r_main"&gt;
+&lt;h4&gt;{Field="UserName"/}&lt;/h4&gt;
+&lt;img src="{ZL:GetPicUrl({Field="UserFace"/})/}" alt="{Field="UserName"/}"&gt;
+&lt;p class="reg_time"&gt;注册时间：{Field="RegTime"/}&lt;/p&gt;
+&lt;p class="dog_r_value"&gt;注册城市：{Field="Province"/}{Field="City"/}{Field="County"/}&lt;/p&gt;
+&lt;p&gt;{ZL.Label id="根据用户名统计该用户的发帖总数" UserName="@UserName" /}条&lt;/p&gt;
+&lt;p class="dog_r_value"&gt;发帖数量&lt;/p&gt;
+&lt;p&gt;{ZL.Label id="获取指定地区发布个数" diqu="@diqu 个&lt;/p&gt;
+&lt;p&gt;发帖城市数量&lt;/p&gt;
+&lt;/div&gt;</LabelContent>
+    <LabelCount>1</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>参数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <EmptyContent />
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_User","tb_s":"ZL_UserBase"}</DataSourceType>
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

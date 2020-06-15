@@ -1,0 +1,62 @@
+{ZL.Source id="节点栏目信息数据源"/}
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta name="msapplication-TileColor" content="#1A0066"/>
+<meta name="msapplication-TileImage" content="/images/win8_symbol_140x140.png"/>
+<title>{$SiteName/}_首页-{ZL.Label id="输出指定ID节点名" NodeID="{SField sid="节点栏目信息数据源" FD="NodeID" page="0"/}" /}</title>
+{$MetaKeywords/}
+{$MetaDescription/}
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<script src="/js/scrolltopcontrol.js"></script>
+<script src="/JS/Controls/B_User.js"></script>
+</head>
+<body >
+{ZL.Label id="全站头部"/}
+
+<div class="container my_Bread">
+<nav aria-label="breadcrumb" role="navigation" >
+<ol class="breadcrumb">
+<li class="breadcrumb-item">当前位置：</li>
+<li class="breadcrumb-item"><a href="/">狗市场</a></li>
+{ZL.Label id="输出多级节点导航_V4" NodeID="" ShowNum="30" /}
+
+</ol>
+</nav>
+</div>
+<!--面包屑 end-->
+
+<div class="m_dogcard container">
+<div class="row list_Fy">
+{ZL.Label id="输出狗狗名片列表new_分页" NodeID="4" TitleNum="30" ShowNum="20" /}
+<!--{ZL.Label id="输出狗狗名片列表_分页" NodeID="1" TitleNum="30" ShowNum="24" /}-->
+</div></div>
+<!--狗狗名片 end-->
+
+{ZL.Label id="全站底部"/}
+<script>
+var buser = new B_User();//会员ajax登录状态需要结合JS/Controls/B_User.js引用同步生效
+buser.IsLogged(function(data,flag){
+	if(flag){
+		data=JSON.parse(data);
+		$(".top_r ul").prepend('<li><a href="/User/"><i class="fa z01-icon095"></i> {ZL:GetuserName()/}</a></li> | <li><a href="/User/User/LogOut" ><i class="fa fa-sign-out" aria-hidden="true"></i> 退出</a></li> ');
+		//$(".top_r  .dropdown-toggle").html("<i class='fa fa-user' aria-hidden='true'></i> ")
+	}
+	else{
+		$(".top_r ul").prepend('<li><a href="/User/">登录</a></li>  | <li><a href="/User/Register">注册</a></li>');
+	}
+});
+
+function LogoutFun(){
+	buser.Logout(function(){location=location;});
+}
+
+//顶部导航选择状态
+$(function(){
+$("#bs-example-navbar-collapse-1 li").eq("4").addClass("active");
+})
+</script>
+</body>
+</html>

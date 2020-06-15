@@ -1,0 +1,408 @@
+{ZL.Source id="节点栏目信息数据源"/}
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title>{SField sid="节点栏目信息数据源" FD="NodeName" page="0"/}_{$SiteName/}</title>
+<meta name="Keywords" content="{SField sid="节点栏目信息数据源" FD="Meta_Keywords" page="0"/}" />
+<meta name="description" content="{SField sid="节点栏目信息数据源" FD="Meta_Description" page="0"/}" />
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<script src="/js/scrolltopcontrol.js"></script>
+<script src="/JS/Controls/B_User.js"></script>
+</head>
+<body >
+{ZL.Label id="全站头部"/}
+
+<ol class="breadcrumb container m_Bread">
+  <li><a href="#">狗市场</a></li>
+  <li class="active">我要买狗</li>
+</ol>
+<!--面包屑 end-->
+
+<div class="container search_term">
+<div class="s_Varieties clearfix">
+<span>品种</span>
+<ul>
+<li data-pz=""><a href="{ZL:GetNodeListUrl(1)/}?n1=&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3={$GetRequest(n3)$}">全部</a></li>
+{ZL.Label id="输出买狗所有狗狗品种" /}
+</ul>
+</div>
+<div class="s_Price clearfix">
+<span>价格</span>
+<ul>
+<li data-jg="0"><a href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max=9999999&n2min=0&n3={$GetRequest(n3)$}">不限</a></li>
+<li data-jg="1000"><a href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max=2000&n2min=1000&n3={$GetRequest(n3)$}">1000-2000元</a></li>
+<li data-jg="2001"><a href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max=3000&n2min=2001&n3={$GetRequest(n3)$}">2001-3000元</a></li>
+<li data-jg="3001"><a href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max=5000&n2min=3001&n3={$GetRequest(n3)$}">3001-5000元</a></li>
+<li data-jg="5001"><a href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max=8000&n2min=5001&n3={$GetRequest(n3)$}">5001-8000元</a></li>
+<li data-jg="8001"><a href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max=10000&n2min=8001&n3={$GetRequest(n3)$}">8001-10000元</a></li>
+<li data-jg="10001"><a href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max=50000&n2min=10001&n3={$GetRequest(n3)$}">10001-50000元</a></li>
+<li data-jg="500000"><a href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max=999999991&n2min=50000&n3={$GetRequest(n3)$}">50000以上</a></li>
+</ul>
+</div>
+<div class="s_region clearfix">
+<span>区域</span>
+<ul>
+	<li data-qy="" ><a href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=">全部</a></li>
+	<li data-qy="北京"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=北京" class="arrdes">北京</a></li>
+	<li data-qy="上海"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=上海" class="arrdes">上海</a></li>
+	<li data-qy="天津"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=天津" class="arrdes">天津</a></li>
+	<li data-qy="重庆"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=重庆" class="arrdes">重庆</a></li>
+	<li data-qy="福建"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=福建" class="arrdes">福建</a></li>
+	<li data-qy="甘肃"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=甘肃" class="arrdes">甘肃</a></li>
+	<li data-qy="广西"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=广西" class="arrdes">广西</a></li>
+	<li data-qy="贵州"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=贵州" class="arrdes">贵州</a></li>
+	<li data-qy="海南"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=海南" class="arrdes">海南</a></li>
+	<li data-qy="河北"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=河北" class="arrdes">河北</a></li>
+	<li data-qy="黑龙江"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=黑龙江" class="arrdes">黑龙江</a></li>
+	<li data-qy="河南"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=河南" class="arrdes">河南</a></li>
+	<li data-qy="湖北"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=湖北" class="arrdes">湖北</a></li>
+	<li data-qy="湖南"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=湖南" class="arrdes">湖南</a></li>
+	<li data-qy="广东"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=广东" class="arrdes">广东</a></li>
+	<li data-qy="安徽"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=安徽" class="arrdes">安徽</a></li>
+	<li data-qy="江苏"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=江苏" class="arrdes">江苏</a></li>
+	<li data-qy="江西"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=江西" class="arrdes">江西</a></li>
+	<li data-qy="吉林"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=吉林" class="arrdes">吉林</a></li>
+	<li data-qy="辽宁"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=辽宁" class="arrdes">辽宁</a></li>
+	<li data-qy="内蒙古"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=内蒙古" class="arrdes">内蒙古</a></li>
+	<li data-qy="宁夏"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=宁夏" class="arrdes">宁夏</a></li>
+	<li data-qy="青海"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=青海" class="arrdes">青海</a></li>
+	<li data-qy="山东"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=山东" class="arrdes">山东</a></li>
+	<li data-qy="山西"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=山西" class="arrdes">山西</a></li>
+	<li data-qy="陕西省"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=陕西省" class="arrdes">陕西省</a></li>
+	<li data-qy="四川"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=四川" class="arrdes">四川</a></li>
+	<li data-qy="新疆"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=新疆" class="arrdes">新疆</a></li>
+	<li data-qy="西藏"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=西藏" class="arrdes">西藏</a></li>
+	<li data-qy="云南"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=云南" class="arrdes">云南</a></li>
+	<li data-qy="浙江"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=浙江" class="arrdes">浙江</a></li>
+	<li data-qy="香港"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=香港" class="arrdes">香港</a></li>
+	<li data-qy="澳门"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=澳门" class="arrdes">澳门</a></li>
+  <li data-qy="台湾"><a  href="{ZL:GetNodeListUrl(1)/}?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=台湾" class="arrdes">台湾</a></li>
+</ul>
+
+
+	<!--地区选项卡 end-->
+	<div class="mg_Area">
+	<div class="collapse multi-collapse" id="aress">
+      <div class="card card-body"><ul id="area_ul">
+	  <li><a href="/Class_1/NodePage.html?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=北京市,海淀">海淀</a></li>
+	  <li><a href="/Class_1/NodePage.html?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=北京市,朝阳">朝阳</a></li>
+	  <li><a href="/Class_1/NodePage.html?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=北京市,丰台">丰台</a></li>
+	  <li><a href="/Class_1/NodePage.html?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=北京市,通州">通州</a></li>
+	  <li><a href="/Class_1/NodePage.html?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=北京市,东城">东城</a></li>
+	  <li><a href="/Class_1/NodePage.html?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=北京市,西城">西城</a></li>
+	  <li><a href="/Class_1/NodePage.html?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=北京市,石景山">石景山</a></li>
+	  <li><a href="/Class_1/NodePage.html?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=北京市,门头沟">门头沟</a></li>
+	  <li><a href="/Class_1/NodePage.html?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=北京市,昌平区">昌平</a></li>
+	  <li><a href="/Class_1/NodePage.html?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=北京市,顺义">顺义</a></li>
+	  <li><a href="/Class_1/NodePage.html?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=北京市,大兴区">大兴</a></li>
+	  <li><a href="/Class_1/NodePage.html?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=北京市,怀柔区">怀柔</a></li>
+	  <li><a href="/Class_1/NodePage.html?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=北京市,平谷区">平谷</a></li>
+	  <li><a href="/Class_1/NodePage.html?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=北京市,密云区">密云</a></li>
+	  <li><a href="/Class_1/NodePage.html?n1={$GetRequest(n1)$}&n2max={$GetRequest(n2max)$}&n2min={$GetRequest(n2min)$}&n3=北京市,延庆区">延庆</a></li>
+	 </ul></div>
+    </div>
+	
+    <div class="collapse multi-collapse" id="aress01">
+      <div class="card card-body"> <ul> {ZL.Label id="通过父节点获得城市[筛选]" ParentID="2" ParentName="上海市" /} </ul>
+      </div>
+    </div>
+	
+	<div class="collapse multi-collapse" id="aress03">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="3" ParentName="天津市" /}
+	  </ul>
+      </div>
+    </div>
+	
+
+	<div class="collapse multi-collapse" id="aress06">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="4" ParentName="重庆市" /}
+	  </ul>
+      </div>
+    </div>
+	<div class="collapse multi-collapse" id="aress07">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="51" ParentName="福建省" /}
+	  </ul>
+      </div>
+    </div>
+	
+	<div class="collapse multi-collapse" id="aress08">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="61" ParentName="甘肃省" /}
+	  </ul>
+      </div>
+    </div>
+	<div class="collapse multi-collapse" id="aress09">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="101" ParentName="广西省" /}
+	  </ul>
+      </div>
+    </div>
+	<div class="collapse multi-collapse" id="aress10">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="116" ParentName="贵州省" /}
+	  </ul>
+      </div>
+    </div>
+	<div class="collapse multi-collapse" id="aress11">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="125" ParentName="海南省" /}
+	  </ul>
+      </div>
+    </div>
+	<div class="collapse multi-collapse" id="aress12">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="5" ParentName="河北省" /}
+	  </ul>
+      </div>
+    </div>
+		<div class="collapse multi-collapse" id="aress13">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="175" ParentName="黑龙江省" /}
+	  </ul>
+      </div>
+    </div>
+		<div class="collapse multi-collapse" id="aress14">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="156" ParentName="河南省" /}
+	  </ul>
+      </div>
+    </div>
+		<div class="collapse multi-collapse" id="aress15">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="189" ParentName="湖北省" /}
+	  </ul>
+      </div>
+    </div>
+	
+			<div class="collapse multi-collapse" id="aress16">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="207" ParentName="湖南省" /}
+	  </ul>
+      </div>
+    </div>
+			<div class="collapse multi-collapse" id="aress17">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="77" ParentName="广东省" /}
+	  </ul>
+      </div>
+    </div>
+			<div class="collapse multi-collapse" id="aress18">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="7" ParentName="安徽省" /}
+	  </ul>
+      </div>
+    </div>
+			<div class="collapse multi-collapse" id="aress19">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="6" ParentName="江苏省" /}
+	  </ul>
+      </div>
+    </div>
+			<div class="collapse multi-collapse" id="aress20">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="230" ParentName="江西省" /}
+	  </ul>
+      </div>
+    </div>
+			<div class="collapse multi-collapse" id="aress21">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="221" ParentName="吉林省" /}
+	  </ul>
+      </div>
+    </div>
+			<div class="collapse multi-collapse" id="aress22">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="242" ParentName="辽宁省" /}
+	  </ul>
+      </div>
+    </div>
+			<div class="collapse multi-collapse" id="aress23">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="257" ParentName="内蒙古" /}
+	  </ul>
+      </div>
+    </div>
+			<div class="collapse multi-collapse" id="aress24">
+      <div class="card card-body">
+	  <ul>
+     {ZL.Label id="通过父节点获得城市[筛选]" ParentID="271" ParentName="宁夏" /}
+	  </ul>
+      </div>
+    </div>
+	
+	<div class="collapse multi-collapse" id="aress25">
+      <div class="card card-body"><ul>{ZL.Label id="通过父节点获得城市[筛选]" ParentID="276" ParentName="青海省" /}</ul></div>
+    </div>
+	
+		<div class="collapse multi-collapse" id="aress26">
+      <div class="card card-body"><ul>{ZL.Label id="通过父节点获得城市[筛选]" ParentID="284" ParentName="山东省" /}</ul></div>
+    </div>
+		<div class="collapse multi-collapse" id="aress27">
+      <div class="card card-body"><ul>{ZL.Label id="通过父节点获得城市[筛选]" ParentID="302" ParentName="山西省" /}</ul></div>
+    </div>
+		<div class="collapse multi-collapse" id="aress28">
+      <div class="card card-body"><ul>{ZL.Label id="通过父节点获得城市[筛选]" ParentID="314" ParentName="陕西省" /}</ul></div>
+    </div>
+		<div class="collapse multi-collapse" id="aress29">
+      <div class="card card-body"><ul>{ZL.Label id="通过父节点获得城市[筛选]" ParentID="326" ParentName="四川省" /}</ul></div>
+    </div>
+		<div class="collapse multi-collapse" id="aress30">
+      <div class="card card-body"><ul>{ZL.Label id="通过父节点获得城市[筛选]" ParentID="586" ParentName="台湾省" /}</ul></div>
+    </div>
+		<div class="collapse multi-collapse" id="aress31">
+      <div class="card card-body"><ul>{ZL.Label id="通过父节点获得城市[筛选]" ParentID="357" ParentName="新疆" /}</ul></div>
+    </div>
+	
+		<div class="collapse multi-collapse" id="aress32">
+      <div class="card card-body"><ul>{ZL.Label id="通过父节点获得城市[筛选]" ParentID="349" ParentName="西藏" /}</ul></div>
+    </div>
+		<div class="collapse multi-collapse" id="aress33">
+      <div class="card card-body"><ul>{ZL.Label id="通过父节点获得城市[筛选]" ParentID="690" ParentName="云南省" /}</ul></div>
+    </div>
+		<div class="collapse multi-collapse" id="aress34">
+      <div class="card card-body"><ul>{ZL.Label id="通过父节点获得城市[筛选]" ParentID="374" ParentName="浙江省" /}</ul></div>
+    </div>
+		<div class="collapse multi-collapse" id="aress35">
+      <div class="card card-body"><ul>{ZL.Label id="通过父节点获得城市[筛选]" ParentID="584" ParentName="香港" /}</ul></div>
+    </div>
+		<div class="collapse multi-collapse" id="aress36">
+      <div class="card card-body"><ul>{ZL.Label id="通过父节点获得城市[筛选]" ParentID="585" ParentName="澳门" /}</ul></div>
+    </div>
+	</div>
+</div>
+</div>
+<!--条件查询 end-->
+
+
+
+<div class="m_dogshoplist container">
+<div class="row">
+<div class="col-xs-12 col-sm-9 m_dogshoplist_l">
+<div class="m_dogshop_title">
+<span class="m_title_text">{$SiteName/}为您找到{ZL.Label id="统计狗狗发布总数" /}条狗狗出售、转让信息 </span>
+
+<div class="m_dogshoplist_c_r">
+<label class="title_imgcheck"><a id="have_img" href="{ZL:GetProposeinfo(1)/}">有图</a></label>
+<div class="dropdown m_Select">
+  <button class="btn btn-default dropdown-toggle" type="button" id="m_Select1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    按性别
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="m_Select1">
+    <li><a href="{ZL:GetLastinfo(1)/}?sex=公">公</a></li>
+    <li><a href="{ZL:GetLastinfo(1)/}?sex=母">母</a></li>
+	<li><a href="{ZL:GetNodeLinkUrl(1)/}">不限</a></li>
+  </ul>
+</div>
+<div class="dropdown m_Select">
+  <button class="btn btn-default dropdown-toggle" type="button" id="m_Select2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    按价格排序
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="m_Select2">
+    <li><a href="{ZL:GetHotinfo(1)/}?orderby=desc">从大到小</a></li>
+    <li><a href="{ZL:GetHotinfo(1)/}?orderby=asc">从小到大</a></li>
+  </ul>
+</div>
+</div>
+</div>
+
+
+
+{ZL.Label id="输出狗狗商品列表_筛选分页[视图]" NodeID="1" ShowNum="10" TitleNum="45" ggpz="{$GetUrldecode({$GetRequest(n1)$})$}" imin="{$GetRequest(n2min)$}" imax="{$GetRequest(n2max)$}" diqu="{$GetUrldecode({$GetRequest(n3)$})$}"/}
+<!--分页 end-->
+</div>
+<div class="col-xs-12 col-sm-3 m_dogshoplist_r">
+<div class="m_dogshop_title text-center">热门推荐</div>
+<ul>
+{ZL.Label id="输出买狗首页推荐信息列表_不分页" NodeID="1" ShopwNum="4" TitleNum="30" /}
+
+</ul>
+</div>
+</div>
+</div>
+<!--狗狗商品列表 end-->
+
+{ZL.Label id="全站底部"/}
+
+<script>
+/*筛选*/
+
+$().ready(function() {
+bind()
+});
+
+function bind(){
+     // 品种
+		var pz=decodeURI("{$GetRequest(n1)$}");
+		//价格
+		var jg=decodeURI("{$GetRequest(n2min)$}");
+		//区域
+		var qy=decodeURI("{$GetRequest(n3)$}");
+    $(".search_term ul li[data-pz='"+pz+"']").addClass("active");
+    $(".search_term ul li[data-jg='"+jg+"']").addClass("active");
+    $(".search_term ul li[data-qy='"+qy+"']").addClass("active"); 
+}
+
+
+
+
+var buser = new B_User();//会员ajax登录状态需要结合JS/Controls/B_User.js引用同步生效
+buser.IsLogged(function(data,flag){
+	if(flag){
+		data=JSON.parse(data);
+		$(".top_r ul").prepend('<li><a href="/User/"><i class="fa z01-icon095"></i> {ZL:GetuserName()/}</a></li> | <li><a href="/User/User/LogOut" ><i class="fa fa-sign-out" aria-hidden="true"></i> 退出</a></li> ');
+		//$(".top_r  .dropdown-toggle").html("<i class='fa fa-user' aria-hidden='true'></i> ")
+	}
+	else{
+		$(".top_r ul").prepend('<li><a href="/User/">登录</a></li>  | <li><a href="/User/Register">注册</a></li>');
+	}
+});
+
+function LogoutFun(){
+	buser.Logout(function(){location=location;});
+}
+
+//顶部导航选择状态
+$(function(){
+$("#bs-example-navbar-collapse-1 li").eq("1").addClass("active");
+})
+
+//地区选项卡
+$(".arrdes").click(function(){
+var href=$(this).attr("href");
+$(href).siblings().removeClass("in");
+})
+
+/*添加置顶信息*/
+var zdhtml="<span style='color:red;font-size:1rem;'>置顶 <i class='fa fa-arrow-up' aria-hidden='true'></i></span>"
+$(".lin1").append(zdhtml);
+
+
+</script>
+</body>
+</html>

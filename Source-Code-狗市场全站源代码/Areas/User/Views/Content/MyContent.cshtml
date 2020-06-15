@@ -1,0 +1,165 @@
+﻿@using System.Data;
+@using ZoomLa.SQLDAL.SQL;
+@model ZoomLa.SQLDAL.SQL.PageSetting
+@{
+    
+}
+@section head{<title>我的发布</title>}
+@section content{
+
+@MvcHtmlString.Create(Call.GetLabel(" {ZL.Label id=\"全站头部b4\"/}"))
+
+<div class="container u_mysite">
+<nav aria-label="breadcrumb" role="navigation">
+  <ol class="breadcrumb">   
+    <li class="breadcrumb-item">当前位置：</li>
+    <li class="breadcrumb-item"><a href="/">狗市场</a></li>
+    <li class="breadcrumb-item"><a href="@Url.Action("Default","")">会员中心</a></li>
+	</ol>
+</nav>
+</div>
+<!--面包屑导航-->
+
+<main class="container">
+    <div class="row">
+        <div id="nodeNav" class="col-12 col-sm-4 col-md-3 col-lg-3 col-xl-2 iuser_Warp_l iuser_content">
+            <div hidden>
+                @Html.Partial("_treeview", ViewBag.treeMod as ZoomLa.Controls.C_TreeView)
+            </div>
+			
+			<ul>
+			<li><strong>会员中心</strong></li>
+			<li class="active"><a href="/user/Content/MyContent?NodeId=1"><i class="fa z01-icon021"></i> 我的发布</a></li>
+			<li><a href="javasrcipt:;" id="Sx_Btn"><i class="fa z01-icon089"></i> 一键刷新</a></li>
+			<li><a href="/user"><i class="fa z01-icon095"></i> 帐号设置</a></li>
+			</ul>
+        </div>
+        <div class="col-12 col-sm-8 col-md-9 col-lg-9 col-xl-10">
+            <div>
+                <div class="pull-left m-2 Iuser_Addbtn">
+                    @MvcHtmlString.Create(ViewBag.addhtml)
+                </div>
+                <form method="post" action="/User/Content/MyContent">
+                    <div class="input-group " >
+                        <select class="form-control">
+                            <option value="0">按标题查找</option>
+                            <option value="1">按ID查找</option>
+                        </select>
+                        <input type="text" class="form-control mvcparam" id="skey" name="skey" />
+                        <span class="input-group-append">
+                            <input type="button" class="btn btn-outline-info" value="搜索" onclick="mvcpage.load();" />
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="table-responsive">
+                @Html.Partial("MyContent_List", Model)
+            </div>
+            <div hidden>
+            @{
+                if (ViewBag.Status.Equals("-2"))
+                {
+                    <input type="button" value="批量还原" class="btn btn-outline-info" onclick="mvcpage.bat({url: 'content_recover' });" />
+                }
+                else
+                {
+                    <input type="button" value="批量删除" class="btn btn-outline-danger" onclick="mvcpage.bat({url: 'content_del', confirm: '确定要批量移除吗' });" />
+                    <input type="button" value="批量刷新" class="btn btn-outline-info" onclick="mvcpage.bat({ url: '/Extend/API.ashx?action=dog_update' });" />
+                }
+            }
+            </div>
+        </div>
+    </div>
+<div style="display:none;">
+<input type="hidden" id="status" value="@ViewBag.Status" class="mvcparam" />
+<input type="hidden" id="nodeid" value="@ViewBag.NodeID" class="mvcparam"/>
+</div>
+</main> 
+}
+@section script{
+<script src="/JS/Controls/B_User.js"></script>
+<script src="/JS/SelectCheckBox.js"></script>
+<script src="/Template/dog/style/layer/layer.js"></script>
+<script>
+function update(dom){
+var hour=parseInt($(dom).data("hour"));
+var gid=$(dom).data("gid");
+var userid=@MvcHtmlString.Create(Call.GetLabel("{ZL.Label id=\"输出用户组级ID\" /}"));
+if(userid=1){
+ if(hour<12){
+	 layer.msg('十分抱歉，暂时无法刷新哦');}	
+	 else{mvcpage.post({ url: '/Extend/API.ashx?action=dog_update', data: {ids:gid},callback:'reload'});
+	layer.msg('刷新成功！');}
+}else{
+	if(hour<6)
+	{layer.msg('十分抱歉，暂时无法刷新哦');}
+	else{
+	mvcpage.post({ url: '/Extend/API.ashx?action=dog_update', data: {ids:gid},callback:'reload'});
+	layer.msg('刷新成功！');
+	}
+}
+}
+</script>
+<script>
+    var buser = new B_User();//会员ajax登录状态需要结合JS/Controls/B_User.js引用同步生效
+	buser.IsLogged(function(data,flag){
+		if(flag){
+			data=JSON.parse(data);
+			$(".top_r ul").prepend('<li><a href="/User/"><i class="fa z01-icon095"></i>@MvcHtmlString.Create(Call.GetLabel("{ZL:GetuserName()/}"))</a></li> | <li><a href="/User/User/LogOut" ><i class="fa fa-sign-out" aria-hidden="true"></i> 退出</a></li> ');
+			//$(".top_r  .dropdown-toggle").html("<i class='fa fa-user' aria-hidden='true'></i> ")
+		}
+		else{
+			$(".top_r ul").prepend('<li><a href="/User/">登录</a></li>  | <li><a href="/User/Register">注册</a></li>');
+		}
+	});
+
+
+	function LogoutFun(){
+		buser.Logout(function(){location=location;});
+	}
+
+
+ 	/*一键刷新*/
+    var userLv="@MvcHtmlString.Create(Call.GetLabel("{ZL.Label id=\"输出用户当前级别序号\" /}"))"
+	if(userLv=="1"){
+	$("#Sx_Btn").click(function(){
+	 layer.msg('赶快升级会员，实现一键刷新吧！');
+	})
+	$(".userLv0").prepend("普通会员")
+	$(".userLv0").addClass("userLv")
+	}else{
+	$("#Sx_Btn").click(function(){
+	 layer.msg('刷新成功！注：每六小时可刷新一次！');
+	})
+	$(".userLv0").prepend("会员尊享 <i class='fa fa-arrow-up'></i>")
+	$(".userLv0").addClass("userLv_a")
+	}
+	
+	
+    $(function () {
+        $(".tvNav a.list1").click(function () { showlist(this); });
+        if (window.localStorage.Content_tvNav) {
+            expand($("#" + window.localStorage.Content_tvNav));
+        }
+    })
+    function showlist(obj) {
+        $(obj).parent().parent().find("a").removeClass("activeLi");//a-->li-->ul
+        $(obj).parent().children("a").addClass("activeLi");//li
+        $(obj).parent().siblings("li").find("ul").slideUp();
+        $(obj).parent().children("ul").slideToggle();
+        window.localStorage.Content_tvNav = obj.id;
+    }
+    function expand(obj)//超链接,不以动画效果显示
+    {
+        $a = $(obj).parent().parent(".tvNav ul").parent("li").find("a:first");
+        if ($a.length > 0) expand($a);
+        $(obj).addClass("activeLi");
+        $(obj).parent("li").children("ul").show();
+    }
+	//导航处理
+	$("#usernav1 ul li").removeClass("active").siblings().eq(1).addClass("active");
+	
+	
+	
+</script>
+}

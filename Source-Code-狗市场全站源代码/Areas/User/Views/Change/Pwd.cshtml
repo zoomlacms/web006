@@ -1,0 +1,237 @@
+﻿@{
+    
+}
+@section head{
+<title>修改密码</title>
+}
+@section content{
+
+@MvcHtmlString.Create(Call.GetLabel(" {ZL.Label id=\"全站头部b4\"/}"))
+
+
+<div class="container u_mysite">
+<nav aria-label="breadcrumb" role="navigation">
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">当前位置：</li>
+    <li class="breadcrumb-item"><a title="会员中心" href="@Url.Action("Default","")">会员中心</a></li>
+    <li class="breadcrumb-item active">
+        <a href="@Request.RawUrl">修改密码</a>
+        @*<a href="javascript:;" onclick="SetKey(0)">[点此启用动态口令] </a>
+        <span id="Enabled_Span" runat="server" class="r_gray">
+            已启用动态口令 (<a href="javascript:;" onclick="ChangeKey(0)">点此修改绑定</a>
+            <a href="javascript:;" onclick="ChangeKey(1)">解除绑定</a>)
+        </span>*@
+    </li>
+    <div class="clearfix"></div>
+</ol>
+</ol>
+</nav>
+</div>
+<!--面包屑导航 end-->
+
+
+<div class="container iuser_Warp iuser_Pwd">
+<div class="row">
+<div class="col-sm-2 iuser_Warp_l">
+<ul>
+<li><strong>会员中心</strong></li>
+<li><a href="/user/Content/MyContent?NodeId=1"><i class="fa z01-icon021"></i> 我的发布</a></li>
+<li><a href="javasrcipt:;" id="Sx_Btn"><i class="fa z01-icon089"></i> 一键刷新</a></li>
+<li class="active"><a href=""><i class="fa z01-icon095"></i> 帐号设置</a></li>
+</ul>
+</div>
+<div class="col-sm-10 iuser_Warp_r">
+<div class="iuser_News_top">
+<ul class="row">
+<li class="col-sm-2"><a href="/user">我的资料</a></li>
+<li class="col-sm-2"><a href="/User/info/UserBase">修改资料</a></li>
+<li class="col-sm-2 active"><a href="/User/Change/Pwd">修改密码</a></li>
+<li class="col-sm-2"><a href="/User/info/UserBase?sel=Tabs1">修改头像</a></li>
+</ul>
+</div>
+
+
+<div class=" btn_green">
+    <form method="post" action="@Url.Action("Pwd_Edit")">
+        <table class="table table-hover ">
+            <tr>
+                <td class="text-right td_m"><strong>原 密 码：</strong></td>
+                <td>
+                    <input type="password" id="TxtOldPassword" name="TxtOldPassword" class="form-control text_300" data-enter="0" title="原密码不能为空" /><small class="iuser_Pwd_t">*修改密码，需要原密码进行验证。</small>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-right"><strong>新 密 码：</strong></td>
+                <td>
+                    <input type="password" id="TxtPassword" name="TxtPassword" class="form-control text_300" data-enter="1" />
+                </td>
+            </tr>
+            <tr>
+                <td class="text-right"><strong>确认密码：</strong></td>
+                <td>
+                    <input type="password" id="TxtPassword2" name="TxtPassword2" class="form-control text_300" data-enter="2" />
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="修改" data-enter="3" class="btn iuser_Pwd_btn" />
+                    <a href="@Url.Action("Index","Info")" class="btn iuser_Pwd_btn">取消</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div id="setkey_diag" style="display: none;">
+        <div class="alert alert-danger" role="alert">
+            <span class="fa fa-exclamation-circle"></span>请确保手机客户端没有名为[<span class="keys"></span>]的密钥（否则请删除后执行本操作），以确保修改成功！
+        </div>
+        <div class="text-center">
+            <img id="keyimg" src="#" />
+        </div>
+        <div class="text-center">
+            <div class="alert alert-info margin_t5" role="alert">↑扫码会造用户名为[<span class="keys"></span>]的密钥,您也可以手工填写密钥：<span class="keys"></span></div>
+            <h3><strong>验证器获取方式:</strong></h3>
+            <ul>
+                <li>IOS:在应用商店搜索"google Authenticator"</li>
+                <li>Android:在应用商城或下载软件搜索"google 身份验证器"</li>
+                <li>Windows Phone:在应用商城搜索"验证器"</li>
+            </ul>
+        </div>
+        <div class="text-center">
+            <asp:Button ID="SetUserKey_B" OnClick="SetUserKey_B_Click" runat="server" Enabled="false" CssClass="btn btn-primary" Text="绑定" />
+            <button type="button" onclick="closeKeyDiag()" class="btn btn-primary">取消</button>
+        </div>
+    </div>
+    <div id="changekey_diag" style="display: none;">
+        <table class="table table-bordered table-hover table-striped">
+            <tr>
+                <td class="text-right">用户名:</td>
+                <td>
+                    <asp:Label ID="UserName_L" runat="server"></asp:Label></td>
+            </tr>
+            <tr>
+                <td class="text-right">密码:</td>
+                <td>
+                    <asp:TextBox ID="PassWord_T" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-right">动态口令:</td>
+                <td>
+                    <asp:TextBox ID="Code_T" runat="server" CssClass="form-control"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="text-center">
+                    <asp:HiddenField ID="ChangeType_Hid" runat="server" />
+                    <asp:Button ID="ChangePWD_B" OnClientClick="return confirm('确定执行此操作?')" runat="server" Text="解除绑定" CssClass="btn btn-primary" OnClick="ChangePWD_B_Click" />
+                    <button type="button" onclick="CloseChDiag()" class="btn btn-primary">取消操作</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+</div>
+</div>
+</div>
+<!--warp end-->
+
+
+<div class="login_Footer">
+@MvcHtmlString.Create(Call.GetLabel("{ZL.Label id=\"全站底部\"/}"))
+</div>
+<!--footer end-->
+
+
+}
+@section script{
+<script src="/JS/Controls/ZL_Dialog.js"></script>
+<script src="/JS/Controls/Control.js"></script>
+<script src="/JS/Controls/B_User.js"></script>
+<script src="/Template/dog/style/layer/layer.js"></script>
+<script>
+	var buser = new B_User();//会员ajax登录状态需要结合JS/Controls/B_User.js引用同步生效
+	buser.IsLogged(function(data,flag){
+		if(flag){
+			data=JSON.parse(data);
+			$(".top_r ul").prepend('<li><a href="/User/"><i class="fa z01-icon095"></i>@MvcHtmlString.Create(Call.GetLabel("{ZL:GetuserName()/}"))</a></li> | <li><a href="/User/User/LogOut" ><i class="fa fa-sign-out" aria-hidden="true"></i> 退出</a></li> ');
+			//$(".top_r  .dropdown-toggle").html("<i class='fa fa-user' aria-hidden='true'></i> ")
+		}
+		else{
+			$(".top_r ul").prepend('<li><a href="/User/">登录</a></li>  | <li><a href="/User/Register">注册</a></li>');
+		}
+	});
+
+
+	function LogoutFun(){
+		buser.Logout(function(){location=location;});
+	}
+	
+	
+
+    $(function () {
+        Control.EnableEnter();
+        $("form").validate({
+            rules: {
+                TxtOldPassword: { required: true },
+                TxtPassword: { required: true, minlength: 6 },
+                TxtPassword2: { required: true, equalTo: "#TxtPassword" }
+            },
+            message: {
+                TxtOldPassword: { required: "旧密码不能为空" },
+                TxtPassword: { required: "新密码不能为空" },
+                TxtPassword2: { required: "确认密码不能为空", equalTo: "确认密码必须同于新密码" }
+            }
+        });
+    })
+    var codeDiag = new ZL_Dialog();
+    function SetKey(type) {
+        $.ajax({
+            type: 'POST',
+            data: { action: 'getkey' },
+            success: function (data) {
+                if (data) {
+                    var obj = JSON.parse(data);
+                    codeDiag.title = type == 0 ? '绑定验证器' : '修改验证器';
+                    codeDiag.content = 'setkey_diag';
+                    codeDiag.ShowModal();
+                    $("#keyimg").load(function () {
+                        $("#SetUserKey_B").removeAttr("disabled");
+                    });
+                    $("#keyimg").attr("src", '/Common/Common.ashx?url=otpauth://totp/' + obj.sitename + '?secret=' + obj.key);
+                    $(".keys").text(obj.key);
+                }
+            }
+        });
+    }
+    function closeKeyDiag() {
+        codeDiag.CloseModal();
+    }
+    var keyDiag = new ZL_Dialog();
+    function ChangeKey(type) {
+        keyDiag.title = "用户验证";
+        keyDiag.content = "changekey_diag";
+        keyDiag.ShowModal();
+        $("#Code_T").val('');
+        $("#ChangePWD_B").val('解除绑定');
+        $("#ChangeType_Hid").val(type);
+        if (type == 0) $("#ChangePWD_B").val("修改绑定");
+    }
+    function CloseChDiag() {
+        keyDiag.CloseModal();
+    }
+	
+	 	/*一键刷新*/
+    var userLv="@MvcHtmlString.Create(Call.GetLabel("{ZL.Label id=\"输出用户当前级别序号\" /}"))"
+	if(userLv=="1"){
+	$("#Sx_Btn").click(function(){
+	 layer.msg('赶快升级会员，实现一键刷新吧！');
+	})
+	}else{
+	$("#Sx_Btn").click(function(){
+	 layer.msg('刷新成功！注：每六小时可刷新一次！');
+	})
+	}
+	
+</script>
+}

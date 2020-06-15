@@ -1,0 +1,132 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>362</LabelID>
+    <LabelName>全站头部b4</LabelName>
+    <LabelType>1</LabelType>
+    <LabelCate>狗市场专用</LabelCate>
+    <LabelDesc />
+    <LabelParam />
+    <LabelTable />
+    <LabelField />
+    <LabelWhere />
+    <LabelOrder />
+    <LabelContent>&lt;div class="top ilogin_Top"&gt;
+&lt;div class="container"&gt;
+&lt;div class="row"&gt;
+&lt;div class="col-xs-12 col-sm-6 top_l"&gt;
+	&lt;ul&gt;
+	&lt;li&gt;&lt;a href="/user/"&gt;手机登录&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a target="_blank" href="{ZL:GetNodeLinkUrl(15)/}"&gt;血统查询&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="{ZL:GetInfoUrl(93)/}"&gt;精准推广&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="/Class_8/NodeNews.html"&gt;会员服务&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;/div&gt;
+	&lt;div class="col-xs-12 col-sm-6 top_r"&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="/user/Content/MyContent"&gt;我的市场&lt;/a&gt;&lt;/li&gt; | 
+		&lt;li&gt;&lt;a href="/User/"&gt;会员中心&lt;/a&gt;&lt;/li&gt; | 
+		&lt;li&gt;&lt;a href="{ZL:GetNodeListUrl(8)/}"&gt;网站导航&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- nav end--&gt;
+
+
+&lt;header class="container header wd_Header"&gt;
+&lt;div class="row home_Pos"&gt;
+&lt;div class="col-xs-12 col-sm-3 logo"&gt;
+&lt;a href="/"&gt;&lt;img src="{$LogoUrl/}" alt="{$SiteName/}"&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class="col-xs-12 col-sm-7 search_box"&gt;
+&lt;div class="search_Box_i"&gt;
+&lt;form class="form-inline" role="search" method="get" action="{ZL:GetNodeListUrl(1)/}" target="_blank"&gt;
+&lt;div class="input-group"&gt;
+&lt;input type="text" class="form-control" name="n1" placeholder="请输入狗狗品种"&gt;
+&lt;input type="text" class="hidden_input" name="n2min" value="0"&gt;
+&lt;input type="text" name="n2max" class="hidden_input" value="9999999"&gt;
+&lt;span class="input-group-btn"&gt;
+&lt;button type="submit" class="btn btn-success"&gt;&lt;i class="fa fa-search"&gt;&lt;/i&gt; 搜索&lt;/button&gt;
+&lt;/span&gt;
+&lt;/div&gt;&lt;!-- /input-group --&gt;
+&lt;/form&gt;
+&lt;span&gt;
+热门犬种：
+&lt;a href="{ZL:GetNodeListUrl(1)/}?n1=泰迪&amp;n2max=999999&amp;n2min=0"&gt;泰迪&lt;/a&gt;
+&lt;a href="{ZL:GetNodeListUrl(1)/}?n1=比格&amp;n2max=999999&amp;n2min=0"&gt;比格&lt;/a&gt;
+&lt;a href="{ZL:GetNodeListUrl(1)/}?n1=边牧&amp;n2max=999999&amp;n2min=0"&gt;边牧&lt;/a&gt;
+  &lt;a href="{ZL:GetNodeListUrl(1)/}?n1=阿拉斯加&amp;n2max=999999&amp;n2min=0"&gt;阿拉斯加&lt;/a&gt;
+&lt;/span&gt;
+&lt;span&gt;热门城市：
+&lt;a href="{ZL:GetNodeListUrl(3)/}?diqu=北京"&gt;北京&lt;/a&gt;
+&lt;a href="{ZL:GetNodeListUrl(3)/}?diqu=上海"&gt;上海&lt;/a&gt;
+&lt;a href="{ZL:GetNodeListUrl(3)/}?diqu=深圳"&gt;深圳&lt;/a&gt;
+  &lt;a href="{ZL:GetNodeListUrl(3)/}?diqu=杭州"&gt;杭州&lt;/a&gt;
+&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="col-xs-12 col-sm-2 top_header_r"&gt;
+&lt;a href="/user/Content/AddContent?NodeID=1&amp;ModelID=50" class="btn btn-success top_header_r_b"&gt;免费发布信息&lt;/a&gt;
+&lt;div class="changcon"&gt;&lt;a href="/user/Content/MyContent?NodeId=1"&gt;修改/删除信息&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/header&gt;
+&lt;!--top_header logo 和搜索end--&gt;
+
+&lt;div class="container wd_Nav"&gt;
+&lt;nav class="navbar navbar-expand-lg navbar-light "&gt;
+  &lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navmy" aria-controls="navmy" aria-expanded="false" aria-label="Toggle navigation"&gt;
+    &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div class="collapse navbar-collapse" id="navmy"&gt;
+    &lt;ul class="navbar-nav mr-auto"&gt;
+      &lt;li class="nav-item "&gt;
+        &lt;a class="nav-link" href="/"&gt;首页&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="nav-item"&gt;
+        &lt;a class="nav-link" href="{ZL:GetNodeLinkUrl(1)/}"&gt;我要买狗&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="nav-item"  id="navmg"&gt;
+        &lt;a class="nav-link" href="/user/Content/AddContent?NodeID=1&amp;ModelID=50"&gt;我要卖狗&lt;/a&gt;
+      &lt;/li&gt;
+	  &lt;li class="nav-item"&gt;
+        &lt;a class="nav-link" href="{ZL:GetNodeLinkUrl(3)/}"&gt;各地市场&lt;/a&gt;
+      &lt;/li&gt;
+	  	  &lt;li class="nav-item"&gt;
+        &lt;a class="nav-link" href="{ZL:GetNodeLinkUrl(4)/}"&gt;狗狗名片&lt;/a&gt;
+      &lt;/li&gt;
+	  	  &lt;li class="nav-item"&gt;
+        &lt;a class="nav-link" href="{ZL:GetNodeLinkUrl(5)/}"&gt;狗狗快讯&lt;/a&gt;
+      &lt;/li&gt;
+	  	 &lt;li class="nav-item " id="navwd22"&gt;
+        &lt;a class="nav-link" href="{ZL:GetNodeLinkUrl(22)/}"&gt;问答&lt;/a&gt;
+      &lt;/li&gt;
+	  	   &lt;li class="nav-item"&gt;
+        &lt;a class="nav-link" href="{ZL:GetNodeLinkUrl(15)/}"&gt;血统查询&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;a href="{ZL:GetNodeLinkUrl(16)/}" class="nav_B4_btn"&gt;会员APP下载&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+&lt;!--nav end--&gt;
+</LabelContent>
+    <LabelCount />
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>参数判断</Modeltypeinfo>
+    <addroot />
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <EmptyContent />
+    <DataSourceType />
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

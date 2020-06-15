@@ -1,0 +1,42 @@
+﻿@using System.Text
+@using ZoomLa.Common
+@using ZoomLa.BLL
+@using ZoomLa.Model
+@using ZoomLa.Components
+@using Newtonsoft.Json
+@using Newtonsoft.Json.Linq
+@model ZoomLaCMS.Models.Field.VM_FieldModel
+@{
+    string value = Model.GetValue();
+    string Name = Model.fieldMod.FieldName;
+    FieldModel fieldMod = new FieldModel(Model.fieldMod.Content);
+    string format = fieldMod.GetValue("format");
+
+    if (string.IsNullOrEmpty(format))
+    {
+        format = "yyyy-MM-dd HH:mm:ss";
+    }
+    if (Model.valueDR == null)
+    {
+        string valueMode = fieldMod.GetValue("value");
+        if (valueMode == "1") { value = DateTime.Now.ToString(format); }
+    }
+    if (!string.IsNullOrEmpty(value))
+    {
+        try { value = Convert.ToDateTime(value).ToString(format); } catch { }
+    }
+    JObject jobj = new JObject();
+    jobj.Add("dateFmt", format);
+    if (!string.IsNullOrEmpty(fieldMod.GetValue("sdate")))
+    {
+        jobj.Add("minDate", fieldMod.GetValue("sdate"));
+    }
+    if (!string.IsNullOrEmpty(fieldMod.GetValue("edate")))
+    {
+        jobj.Add("maxDate", fieldMod.GetValue("edate"));
+    }
+    string wdateJson = JsonConvert.SerializeObject(jobj);
+}
+<div>
+    <input type="text" class="form-control m715-50" name="txt_@Name" onclick="WdatePicker(@wdateJson);" value="@value">@Model.fieldMod.Description
+</div>

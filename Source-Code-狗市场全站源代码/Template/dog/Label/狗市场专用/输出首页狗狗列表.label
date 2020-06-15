@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>331</LabelID>
+    <LabelName>输出首页狗狗列表</LabelName>
+    <LabelType>4</LabelType>
+    <LabelCate>狗市场专用</LabelCate>
+    <LabelDesc>输出首页狗狗列表</LabelDesc>
+    <LabelParam>NodeID,1,1,节点ID|TitleNum,30,1,标题长度|ShowNum,,1,显示数量</LabelParam>
+    <LabelTable>ZL_CommonModel LEFT JOIN ZL_C_dog ON ZL_CommonModel.ItemID=ZL_C_dog.ID</LabelTable>
+    <LabelField>OrderID,TopImg,Title,CreateTime,price,synopsis,ggpz,diqu,GeneralID</LabelField>
+    <LabelWhere>(NodeID=@NodeID or FirstNodeID=@NodeID)
+ And Status=99 and EliteLevel=1</LabelWhere>
+    <LabelOrder>ZL_CommonModel.CreateTime DESC</LabelOrder>
+    <LabelContent>
+{Repeate}
+&lt;li class="col-xs-12 col-sm-6 col-md-4 col-lg-4"&gt;
+&lt;div class="col-sm-12 list_main"&gt;
+&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}" class="m_content_list_l"&gt;&lt;img src="{ZL:GetPicUrl({Field="TopImg"/})/} " alt="{Field="Title"/}"  onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"&gt;&lt;/a&gt;
+&lt;div class="m_content_list_r"&gt;
+&lt;div class="list_mapbox"&gt; &lt;a href="{ZL:GetNodeListUrl(3)/}?diqu={ZL:SplitWord({Field="diqu"/},,,1)/}" class="typemap diqu{ZL:jsq}" title="{Field="diqu"/}"&gt;{ZL:SplitWord({Field="diqu"/},,,1)/}狗市&lt;/a&gt;
+  &lt;strong&gt;今日信息数( &lt;span&gt; {ZL.Label id="统计所在省狗的总数_当天" diqu="{ZL:SplitWord({Field="diqu"/},,,1)/}" NodeID="1" /}&lt;/span&gt;)&lt;/strong&gt;
+&lt;/div&gt;
+  &lt;label&gt; 总信息数（&lt;span&gt;{ZL.Label id="统计所在省狗的总数_ALL" diqu="{ZL:SplitWord({Field="diqu"/},,,1)/}" NodeID="1" /}&lt;/span&gt;）&lt;/label&gt;
+  &lt;div class="Prices"&gt;&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}" class="type_title" title="{Field="Title"/}"&gt;{ZL:CutText({Field="Title"/},@TitleNum,)/}&lt;/a&gt; &lt;span&gt; {Field="price"/} 元&lt;/span&gt;&lt;/div&gt;
+&lt;div class="homelist_Time"&gt;{ZL:FormatDate({Field="CreateTime"/} ,yyyy-MM-dd hh:m)/} 狗市场
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+{/Repeate}</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>参数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_CommonModel","tb_s":"ZL_C_dog"}</DataSourceType>
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

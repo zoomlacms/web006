@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>373</LabelID>
+    <LabelName>根据会员等级输出内容</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>狗市场专用</LabelCate>
+    <LabelDesc />
+    <LabelParam />
+    <LabelTable>ZL_Group</LabelTable>
+    <LabelField>GroupID</LabelField>
+    <LabelWhere />
+    <LabelOrder>ZL_Group.GroupID DESC</LabelOrder>
+    <LabelContent>{Repeate}
+{ZL.Label id="输出狗狗商品列表[按级]_分页" NodeID="1" ShopNum="10" TitleNum="65" GroupID="{ZL.Label id="输出用户组级ID" /}" /}
+{/Repeate}
+&lt;div class="text-center"&gt;{ZL.Page id="响应式列表分页v4"/}&lt;/div&gt;
+</LabelContent>
+    <LabelCount>10</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>参数判断</Modeltypeinfo>
+    <addroot />
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_Group","tb_s":""}</DataSourceType>
+    <ConnectString />
+  </Table>
+</NewDataSet>

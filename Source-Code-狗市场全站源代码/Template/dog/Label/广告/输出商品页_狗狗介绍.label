@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>341</LabelID>
+    <LabelName>输出商品页_狗狗介绍</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>广告</LabelCate>
+    <LabelDesc>狗狗内容页的推荐</LabelDesc>
+    <LabelParam>NodeID,0,1,节点ID|ShowNum,3,1,调用信息数|ShopID,,2,内容ID</LabelParam>
+    <LabelTable>ZL_CommonModel LEFT JOIN ZL_C_dog ON ZL_CommonModel.ItemID=ZL_C_dog.ID</LabelTable>
+    <LabelField>content</LabelField>
+    <LabelWhere>(NodeID=@NodeID or FirstNodeID=@NodeID) and status=99</LabelWhere>
+    <LabelOrder>ZL_CommonModel.CreateTime DESC</LabelOrder>
+    <LabelContent>&lt;div class="shop_detailed_l col-xs-12 col-md-10"&gt;{Field="content"/}&lt;/div&gt;</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_CommonModel","tb_s":"ZL_C_dog"}</DataSourceType>
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

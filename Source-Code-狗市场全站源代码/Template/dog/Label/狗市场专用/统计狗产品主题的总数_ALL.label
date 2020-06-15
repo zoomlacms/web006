@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>347</LabelID>
+    <LabelName>统计狗产品主题的总数_ALL</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>狗市场专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>ggpz,1,1,狗狗品种|NodeID,1,1,节点ID</LabelParam>
+    <LabelTable>ZL_CommonModel LEFT JOIN ZL_C_dog ON ZL_CommonModel.ItemID=ZL_C_dog.ID</LabelTable>
+    <LabelField>count(*) as Nums</LabelField>
+    <LabelWhere>(NodeID=@NodeID or FirstNodeID=@NodeID) and Status=99 and  ModelID=50  and  Title like'%@ggpz%'</LabelWhere>
+    <LabelOrder />
+    <LabelContent>{Field="Nums"/}</LabelContent>
+    <LabelCount>1</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>参数判断</Modeltypeinfo>
+    <addroot />
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_CommonModel","tb_s":"ZL_C_dog"}</DataSourceType>
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

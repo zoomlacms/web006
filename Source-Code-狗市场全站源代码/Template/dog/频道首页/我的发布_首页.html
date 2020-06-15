@@ -1,0 +1,97 @@
+﻿{ZL.Source id="节点栏目信息数据源"/}<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{SField sid="节点栏目信息数据源" FD="NodeName" page="0"/}_{$SiteName/}</title>
+<meta name="Keywords" content="{SField sid="节点栏目信息数据源" FD="Meta_Keywords" page="0"/}" />
+<meta name="description" content="{SField sid="节点栏目信息数据源" FD="Meta_Description" page="0"/}" />
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<script src="/js/scrolltopcontrol.js" type="text/javascript"></script>
+<script type="text/javascript" src="{$CssDir/}js/server.js"></script>
+<script src="/JS/Controls/B_User.js"></script>
+</head> 
+<body>
+{ZL.Label id="全站头部"/}
+
+<div class="container my_Bread">
+<nav aria-label="breadcrumb" role="navigation">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">当前位置：</li>
+<li class="breadcrumb-item"><a href="/user/">会员中心</a></li>
+<li class="breadcrumb-item"><a href="/">我的发布</a></li>
+</ol>
+</nav>
+</div>
+<!--面包屑 end-->
+
+
+<div class="container iuser_Warp iuser_Fblist">
+<div class="row">
+<div class="col-sm-2 iuser_Warp_l">
+<ul>
+<li><strong>会员中心</strong></li>
+<li class="active"><a href="{ZL:GetNodeListUrl(2)/}"><i class="fa z01-icon021"></i> 我的发布</a></li>
+<li><a href="/User/info/"><i class="fa z01-icon089"></i> 一键刷新</a></li>
+<li><a href="/User/info/UserBase"><i class="fa z01-icon095"></i> 帐号设置</a></li>
+</ul>
+</div>
+<div class="col-sm-10 iuser_Warp_r">
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="list01" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">最新信息</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="list02" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">顶置信息</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="list03" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">待审核</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="list04" data-toggle="tab" href="#add01" role="tab" aria-controls="contact" aria-selected="false">已删除</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link" id="list05" data-toggle="tab" href="#add02" role="tab" aria-controls="contact" aria-selected="false">所有信息</a>
+  </li>
+</ul>
+
+
+<div class="tab-content iuser_Fblist_c" id="myTabContent">
+  <div class="tab-pane fade show active in list_Fy" id="home" role="tabpanel" aria-labelledby="list01">
+  <p>提示：如果文章被删除，说明审核没有通过，审稿需要时间，请耐心等待。</p>
+
+{ZL.Label id="输出登录用户发布列表" ShopwNum="10" TitleNum="30" UserName="{ZL:GetuserName()/}
+  </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="list02">...</div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="list03">...</div>
+   <div class="tab-pane fade" id="add01" role="tabpanel" aria-labelledby="list04">...</div>
+  <div class="tab-pane fade" id="add02" role="tabpanel" aria-labelledby="list05">...</div>
+</div>
+</div>
+</div>
+</div>
+<!--Fblist end-->
+
+
+{ZL.Label id="全站底部"/}
+<script src="/JS/Controls/B_User.js"></script>
+<script>
+   var buser = new B_User();//会员ajax登录状态需要结合JS/Controls/B_User.js引用同步生效
+buser.IsLogged(function(data,flag){
+	if(flag){
+		data=JSON.parse(data);
+		$(".top_r ul").append('<li><a href="/User/User/LogOut" ><i class="fa fa-sign-out" aria-hidden="true"></i> 退出</a></li> | <li><a href="/User/"><i class="fa z01-icon095"></i> {ZL:GetuserName()/}</a></li>');
+		//$(".top_r  .dropdown-toggle").html("<i class='fa fa-user' aria-hidden='true'></i> ")
+	}
+	else{
+		$(".top_r ul").append(' <li><a href="/User/Register">注册</a></li> | <li><a href="/User/">登录</a></li>');
+	}
+});
+
+function LogoutFun(){
+	buser.Logout(function(){location=location;});
+}
+</script>
+</body>
+</html>

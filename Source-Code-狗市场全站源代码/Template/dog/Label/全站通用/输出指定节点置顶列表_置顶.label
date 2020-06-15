@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>356</LabelID>
+    <LabelName>输出指定节点置顶列表_置顶</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>全站通用</LabelCate>
+    <LabelDesc />
+    <LabelParam>NodeID,1,1,节点ID|TitleNum,30,1,标题长度|ShowNum,10,1,调用信息数|synopsisSum,,1,简介长度</LabelParam>
+    <LabelTable>ZL_CommonModel LEFT JOIN ZL_C_Article ON ZL_CommonModel.ItemID=ZL_C_Article.ID</LabelTable>
+    <LabelField>GeneralID,TopImg,Title,CreateTime,Hits,synopsis</LabelField>
+    <LabelWhere>(NodeID=@NodeID or FirstNodeID=@NodeID) and status=99 and IsTop=1 </LabelWhere>
+    <LabelOrder>CreateTime DESC</LabelOrder>
+    <LabelContent>{Repeate}
+&lt;li class="m_rnews_list"&gt;
+  &lt;div class="m_rnews_list_l col-xs-4 col-sm-2 col-md-2"&gt;&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}"&gt;&lt;img src="{Field="TopImg"/}" alt="{Field="Title"/}"  onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"&gt;&lt;/a&gt;&lt;/div&gt;
+  &lt;div class="m_rnews_list_r col-xs-8 col-sm-10 col-md-10 m_rnews_dz"&gt;
+    &lt;h1&gt;&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}" title="{Field="Title"/} "&gt;{ZL:CutText({Field="Title"/},@TitleNum,)/}&lt;i class="fa fa-arrow-up" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;
+    &lt;p&gt;{ZL:CutText({Field="synopsis"/},@synopsisSum,)/}&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}"&gt; [详情]&lt;/a&gt;&lt;/p&gt;
+    &lt;div class="r_Statistics"&gt;&lt;i class="fa fa-eye" aria-hidden="true"&gt;&lt;/i&gt; 阅读: {Field="Hits"/} &lt;span&gt; {Field="CreateTime"/}&lt;/span&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/li&gt;
+{/Repeate}</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>参数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_CommonModel","tb_s":"ZL_C_Article"}</DataSourceType>
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

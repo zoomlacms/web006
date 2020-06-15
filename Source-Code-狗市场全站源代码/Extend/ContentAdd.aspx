@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ContentAdd.aspx.cs" Inherits="ZoomLaCMS.Extend.ContentAdd" ValidateRequest="false" %>

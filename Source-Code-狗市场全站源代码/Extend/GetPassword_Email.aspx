@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="GetPassword_Email.aspx.cs" Inherits="ZoomLaCMS.Extend.GetPassword_Email" %>

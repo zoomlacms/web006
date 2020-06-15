@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>366</LabelID>
+    <LabelName>获取用户头像</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>狗市场专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>UserName,0,1,用户名称</LabelParam>
+    <LabelTable>ZL_User LEFT JOIN ZL_UserBase ON ZL_User.UserID=ZL_UserBase.UserID</LabelTable>
+    <LabelField>ZL_UserBase.UserFace</LabelField>
+    <LabelWhere> ZL_User.UserName='@UserName'</LabelWhere>
+    <LabelOrder />
+    <LabelContent>{ZL:GetPicUrl({Field="UserFace"/})/}</LabelContent>
+    <LabelCount>1</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>参数判断</Modeltypeinfo>
+    <addroot />
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_User","tb_s":"ZL_UserBase"}</DataSourceType>
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

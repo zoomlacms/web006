@@ -1,0 +1,46 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>375</LabelID>
+    <LabelName>输出全部问答列表</LabelName>
+    <LabelType>4</LabelType>
+    <LabelCate>狗市场专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>ShowNum,0,1,显示个数|TitleNum,30,1,标题长度</LabelParam>
+    <LabelTable>ZL_Ask</LabelTable>
+    <LabelField>ID,Qcontent,UserName,AddTime,QueType</LabelField>
+    <LabelWhere>ZL_Ask.Status=1 or ZL_Ask.Status=2</LabelWhere>
+    <LabelOrder>ZL_Ask.AddTime DESC</LabelOrder>
+    <LabelContent>&lt;div class="ask_Mhei"&gt;
+&lt;ul class="ask_Tabs_ul"&gt;
+{Repeate}
+  &lt;li&gt;&lt;a href="/Ask/Interactive?ID={Field="ID"/}" title="{Field="Qcontent"/}" target="_blank"&gt;&lt;i class="fa fa-file-text-o" aria-hidden="true"&gt;&lt;/i&gt;  {ZL:CutText({Field="Qcontent"/},@TitleNum,)/} &lt;/a&gt;
+&lt;div class="tabs_li_r"&gt;
+  &lt;abbr class="tw_User"&gt;{Field="UserName"/} &lt;small&gt;{ZL:FormatDate({Field="AddTime"/},yyyy-MM-dd)/}&lt;/small&gt;&lt;/abbr&gt;
+  
+  &lt;abbr class="ask_Tabs_tj"&gt;&lt;small class="ask_list_sum1"&gt;{ZL.Label id="输出问题回答条数" QueId ="{Field="ID"/}" /}&lt;/small&gt; &lt;small class="ask_list_sum2"&gt;{ZL.Label id="输出问题总回答条数" QueId="{Field="ID"/}" /}&lt;/small&gt;&lt;/abbr&gt; 
+  
+  &lt;abbr&gt;{ZL.Label id="输出最新回答人的姓名时间" QueId="{Field="ID"/}" /}&lt;/abbr&gt;&lt;abbr class="ask_li_btn"&gt;&lt;a href="/Ask/MyAnswer?ID={Field="ID"/}"&gt;回答&lt;/a&gt;&lt;/abbr&gt;&lt;/div&gt;
+    
+&lt;/li&gt;
+{/Repeate}
+&lt;/ul &gt;
+  &lt;div class="clearfix"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="text-center"&gt;{ZL.Page id="响应式列表分页v4"/}&lt;/div&gt;</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>参数判断</Modeltypeinfo>
+    <addroot />
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <EmptyContent />
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_Ask","tb_s":""}</DataSourceType>
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

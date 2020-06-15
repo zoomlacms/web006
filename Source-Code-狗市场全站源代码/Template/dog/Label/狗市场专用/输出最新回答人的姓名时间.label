@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>387</LabelID>
+    <LabelName>输出最新回答人的姓名时间</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>狗市场专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>Queid,0,1,问题ID</LabelParam>
+    <LabelTable>ZL_GuestAnswer</LabelTable>
+    <LabelField>AddTime,UserName</LabelField>
+    <LabelWhere> ZL_GuestAnswer.QueId=@Queid</LabelWhere>
+    <LabelOrder>ZL_GuestAnswer.AddTime DESC</LabelOrder>
+    <LabelContent>{Field="UserName"/} &lt;small&gt;{ZL:FormatDate({Field="AddTime"/},yyyy-MM-dd)/}&lt;/small&gt;</LabelContent>
+    <LabelCount>1</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>参数判断</Modeltypeinfo>
+    <addroot />
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <EmptyContent>&lt;small style="color:red;"&gt;暂无人回答&lt;/small&gt;</EmptyContent>
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_GuestAnswer","tb_s":""}</DataSourceType>
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

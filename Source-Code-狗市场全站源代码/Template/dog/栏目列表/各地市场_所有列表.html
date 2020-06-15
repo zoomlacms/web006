@@ -1,0 +1,126 @@
+{ZL.Source id="节点栏目信息数据源"/}
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta name="msapplication-TileColor" content="#1A0066"/>
+<meta name="msapplication-TileImage" content="/images/win8_symbol_140x140.png"/>
+<title>{$SiteName/}_首页-{ZL.Label id="输出指定ID节点名" NodeID="{SField sid="节点栏目信息数据源" FD="NodeID" page="0"/}" /}</title>
+{$MetaKeywords/}
+{$MetaDescription/}
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<script src="/js/scrolltopcontrol.js"></script>
+<script src="/JS/Controls/B_User.js"></script>
+</head>
+<body >
+{ZL.Label id="全站头部"/}
+
+
+<section class="search_term container" hidden>
+<div class="s_region clearfix">
+<span>区域</span>
+<ul>
+	<li><a href="/Class_3/NodePage.html?n1=">不限</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=北京">北京</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=上海">上海</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=广州">广州</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=天津">天津</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=杭州">杭州</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=成都">成都</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=重庆">重庆</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=福建">福建</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=甘肃">甘肃</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=广西">广西</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=贵州">贵州</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=海南">海南</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=河北">河北</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=黑龙江">黑龙江</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=河南">河南</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=湖北">湖北</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=湖南">湖南</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=广东">广东</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=安徽">安徽</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=江苏">江苏</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=江西">江西</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=吉林">吉林</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=辽宁">辽宁</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=内蒙古">内蒙古</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=宁夏">宁夏</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=青海">青海</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=山东">山东</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=山西">山西</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=陕西省">陕西省</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=四川">四川</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=台湾">台湾</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=新疆">新疆</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=西藏">西藏</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=云南">云南</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=浙江">浙江</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=香港">香港</a></li>
+	<li><a href="/Class_3/NodePage.html?n1=澳门">澳门</a></li>
+	</ul>
+</div>
+</section><!--隐藏 end-->
+
+<div class="container my_Bread">
+<nav aria-label="breadcrumb" role="navigation">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">当前位置：</li>
+<li class="breadcrumb-item"><a href="/">狗市场</a></li>
+{ZL.Label id="输出多级节点导航_V4" NodeID="{SField sid="节点栏目信息数据源" FD="NodeID" page="0"/}" ShowNum="30" /}
+</ol>
+</nav>
+</div>
+<!--面包屑 end-->
+
+<section class="container homeTip">
+<h1><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> 全国出售、转让信息</h1> 
+<p class="pull-right">>>提醒：请大家 多了解行情，正确认识纯种狗狗的价格，所谓一分价一分货，低于1000元价格的狗狗，购买时需谨慎，以免贪图便宜上当受骗！</p>
+</section>
+
+<!--<main class="container homelist">
+<div class="row list_Fy">
+{ZL.Label id="输出狗狗各地市场列表_分页" NodeID="1" TitleNum="25" ShowNum="24" /}
+</div>
+</main>-->
+<main class="container homelist">
+<div class="row">
+<ul class="m_content_list">
+{ZL.Label id="输出首页所有地区信息列表_已审核" ShowNum="23" TitleNum="57" /}
+</ul>
+</div>
+</main>
+
+<!--各地市场展示 end-->
+
+{ZL.Label id="全站底部"/}
+<script>
+var buser = new B_User();//会员ajax登录状态需要结合JS/Controls/B_User.js引用同步生效
+buser.IsLogged(function(data,flag){
+	if(flag){
+		data=JSON.parse(data);
+		$(".top_r ul").prepend('<li><a href="/User/"><i class="fa z01-icon095"></i> {ZL:GetuserName()/}</a></li> | <li><a href="/User/User/LogOut" ><i class="fa fa-sign-out" aria-hidden="true"></i> 退出</a></li> ');
+		//$(".top_r  .dropdown-toggle").html("<i class='fa fa-user' aria-hidden='true'></i> ")
+	}
+	else{
+		$(".top_r ul").prepend('<li><a href="/User/">登录</a></li>  | <li><a href="/User/Register">注册</a></li>');
+	}
+});
+
+function LogoutFun(){
+	buser.Logout(function(){location=location;});
+}
+//顶部导航选择状态
+$(function(){
+$("#bs-example-navbar-collapse-1 li").eq("3").addClass("active");
+})
+
+/*字符串处理*/
+var ulindex= $(".m_content_list li").length;
+for(var i=1;i<=ulindex;i++){
+$(".diqu"+i).html($(".diqu"+i).html().replace(/省/,""));
+}
+</script>
+</body>
+</html>

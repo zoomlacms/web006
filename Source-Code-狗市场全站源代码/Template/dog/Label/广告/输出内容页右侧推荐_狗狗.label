@@ -1,0 +1,36 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>339</LabelID>
+    <LabelName>输出内容页右侧推荐_狗狗</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>广告</LabelCate>
+    <LabelDesc />
+    <LabelParam>NodeID,0,1,节点ID|ShowNum,3,1,调用信息数</LabelParam>
+    <LabelTable>ZL_CommonModel LEFT JOIN ZL_C_dog ON ZL_CommonModel.ItemID=ZL_C_dog.ID</LabelTable>
+    <LabelField>GeneralID,Title,price,TopImg</LabelField>
+    <LabelWhere>(NodeID=@NodeID or FirstNodeID=@NodeID) and status=99</LabelWhere>
+    <LabelOrder>ZL_CommonModel.Hits DESC</LabelOrder>
+    <LabelContent>{Repeate}
+&lt;li&gt;
+  &lt;div&gt;&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}"&gt;&lt;img src="{ZL:GetPicUrl({Field="TopImg"/})/}" alt="{Field="Title"/}"&gt;&lt;/a&gt;&lt;/div&gt;
+	&lt;p&gt;&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}"&gt;{Field="Title"/}&lt;/a&gt;&lt;/p&gt;
+	&lt;span&gt;价格：￥{Field="price"/}&lt;/span&gt;
+&lt;/li&gt;
+{/Repeate}</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>参数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_CommonModel","tb_s":"ZL_C_dog"}</DataSourceType>
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

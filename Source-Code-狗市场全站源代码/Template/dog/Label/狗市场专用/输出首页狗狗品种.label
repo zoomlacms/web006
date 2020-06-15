@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>368</LabelID>
+    <LabelName>输出首页狗狗品种</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>狗市场专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>GradeID,0,1,狗狗品种|ShowNum,10,1,显示个数</LabelParam>
+    <LabelTable>ZL_Grade</LabelTable>
+    <LabelField>GradeName</LabelField>
+    <LabelWhere> ZL_Grade.ParentID=@GradeID</LabelWhere>
+    <LabelOrder>ZL_Grade.GradeID DESC</LabelOrder>
+    <LabelContent>{Repeate}
+&lt;li&gt;&lt;a href="{ZL:GetNodeListUrl(1)/}?n1={Field="GradeName"/}&amp;n2max=999999&amp;n2min=0"&gt;{Field="GradeName"/}&lt;/a&gt;&lt;/li&gt;
+{/Repeate}</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>参数判断</Modeltypeinfo>
+    <addroot />
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <EmptyContent />
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_Grade","tb_s":""}</DataSourceType>
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

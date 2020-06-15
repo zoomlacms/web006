@@ -1,0 +1,46 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>342</LabelID>
+    <LabelName>获取当登录用户信息</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>狗市场专用</LabelCate>
+    <LabelDesc>当前登录用户信息</LabelDesc>
+    <LabelParam />
+    <LabelTable>ZL_User LEFT JOIN ZL_UserBase ON ZL_User.UserID=ZL_UserBase.UserID</LabelTable>
+    <LabelField>ZL_User.UserID,UserName,RegTime,LastLoginTime,TrueName,Mobile,QQ,LastLoginIP,UserExp,Email,GroupID,UC</LabelField>
+    <LabelWhere>ZL_User.UserID={ZL:GetuserID()/}</LabelWhere>
+    <LabelOrder />
+    <LabelContent>&lt;li class="col-sm-6"&gt;&lt;span&gt;UID&lt;/span&gt; {Field="UserID"/}&lt;/li&gt;
+&lt;li class="col-sm-6"&gt;&lt;span&gt;注册时间&lt;/span&gt; {ZL:FormatDate({Field="RegTime"/},yyyy-MM-dd)/}&lt;/li&gt;
+&lt;li class="col-sm-6"&gt;&lt;span&gt;用户名&lt;/span&gt; {Field="UserName"/}&lt;/li&gt;
+&lt;li class="col-sm-6"&gt;&lt;span&gt;在线时间&lt;/span&gt; 156&lt;/li&gt;
+&lt;li class="col-sm-6"&gt;&lt;span&gt;联系人&lt;/span&gt; {Field="TrueName"/}&lt;/li&gt;
+&lt;li class="col-sm-6"&gt;&lt;span&gt;最后登录&lt;/span&gt;  {ZL:FormatDate({Field="LastLoginTime"/},yyyy-MM-dd)/}&lt;/li&gt;
+&lt;li class="col-sm-6"&gt;&lt;span&gt;电话号&lt;/span&gt; {Field="Mobile"/}&lt;/li&gt;
+&lt;li class="col-sm-6"&gt;&lt;span&gt;最后登录IP&lt;/span&gt; {Field="LastLoginIP"/}&lt;/li&gt;
+&lt;li class="col-sm-6"&gt;&lt;span&gt;QQ号&lt;/span&gt; {Field="QQ"/}&lt;/li&gt;
+&lt;li class="col-sm-6"&gt;&lt;span&gt;综合积分&lt;/span&gt; {Field="UserExp"/}&lt;/li&gt;
+&lt;li class="col-sm-6"&gt;&lt;span&gt;微信号&lt;/span&gt; {Field="UC"/}&lt;/li&gt;
+&lt;li class="col-sm-6"&gt;&lt;span&gt;发帖&lt;/span&gt;{ZL.Label id="统计登录用户发帖总数_ALL" NodeID="1" /} &lt;/li&gt;
+&lt;li class="col-sm-6"&gt;&lt;span&gt;电子邮件&lt;/span&gt; {Field="Email"/}&lt;/li&gt;
+&lt;li class="col-sm-6"&gt;&lt;span&gt;平均日发帖&lt;/span&gt; {ZL.Label id="输出登录用户发帖的总数_当天" NodeID="1" /}&lt;/li&gt;
+&lt;li class="col-sm-6"&gt;&lt;span&gt;交易保障&lt;/span&gt; 唯一电话：{Field="Mobile"/}&lt;/li&gt;
+&lt;li class="col-sm-6"&gt;&lt;span&gt;商户级别&lt;/span&gt;{ZL.Label id="输出用户当前级别" /} &lt;/li&gt;
+</LabelContent>
+    <LabelCount>1</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>参数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_User","tb_s":"ZL_UserBase"}</DataSourceType>
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

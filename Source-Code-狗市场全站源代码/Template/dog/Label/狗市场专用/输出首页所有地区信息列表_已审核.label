@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>390</LabelID>
+    <LabelName>输出首页所有地区信息列表_已审核</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>狗市场专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>ShowNum,15,1,显示个数|TitleNum,30,1,显示个数</LabelParam>
+    <LabelTable>ZL_EX_DogByState3</LabelTable>
+    <LabelField>Dicname,NodeID,TopImg,Title,times,Num,GeneralID,price,Inputer</LabelField>
+    <LabelWhere />
+    <LabelOrder />
+    <LabelContent>{Repeate}
+&lt;li class="col-xs-12 col-sm-6 col-md-4 col-lg-4"&gt;
+&lt;div class="col-sm-12 list_main"&gt;
+ 
+&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}" class="m_content_list_l"&gt;&lt;img src="{ZL:GetPicUrl({Field="TopImg"/})/} " alt="{Field="Title"/}"  onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"&gt;&lt;/a&gt;
+&lt;div class="m_content_list_r"&gt;
+&lt;div class="list_mapbox"&gt; &lt;a href="/Class_1/NodePage.html?n2max=9999999&amp;n2min=0&amp;n3={ZL:CutText({Field="Dicname"/},4,)/}" class="typemap diqu{ZL:jsq}" title="{Field="Dicname"/}"&gt;  {ZL:SplitWord({Field="Dicname"/},,,1)/}狗市&lt;/a&gt;
+  &lt;strong&gt;  &lt;label&gt; 总信息数:&lt;span&gt;{Field="Num"/}&lt;/span&gt;&lt;/label&gt;&lt;/strong&gt;
+&lt;/div&gt;
+  &lt;div class="Prices"&gt;&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}"&gt;{ZL:CutText({Field="Title"/},@TitleNum,)/}
+    &lt;small class="home_list_price" &gt;￥{Field="price"/}&lt;/small&gt;&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class="homelist_Time"&gt;{ZL:FormatDate({Field="times"/},yyyy-MM-dd )/}  &lt;label&gt;{Field="Inputer"/}&lt;/label&gt;  
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/li&gt;
+{/Repeate}
+
+
+</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>参数判断</Modeltypeinfo>
+    <addroot />
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <EmptyContent />
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_EX_DogByState3","tb_s":""}</DataSourceType>
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

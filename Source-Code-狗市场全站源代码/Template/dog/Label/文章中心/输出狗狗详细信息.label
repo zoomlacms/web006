@@ -1,0 +1,78 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>328</LabelID>
+    <LabelName>输出狗狗详细信息</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>文章中心</LabelCate>
+    <LabelDesc>输出狗狗详细信息</LabelDesc>
+    <LabelParam>GID,,2,GID变量</LabelParam>
+    <LabelTable>ZL_CommonModel LEFT JOIN ZL_C_dog ON ZL_CommonModel.ItemID=ZL_C_dog.ID</LabelTable>
+    <LabelField>TopImg,Title,price,Hits,fwbz,ggpz,dsqz,sex,ymzk,ql,qu,video,times,ren,diqu,tel,fei,wechat,qq</LabelField>
+    <LabelWhere> ZL_CommonModel.GeneralID=@GID</LabelWhere>
+    <LabelOrder />
+    <LabelContent>&lt;div class="col-xs-12 col-md-5 shop_content_l"&gt;
+&lt;div class="view shop_main_thumbnail"&gt;
+&lt;div class="swiper-container swiper-container-horizontal"&gt; &lt;a class="arrow-left" href="javascript:;"&gt;&lt;i class="fa fa-angle-left" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt; &lt;a class="arrow-right" href="#"&gt;&lt;i class="fa fa-angle-right" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;div class="swiper-wrapper" style="transform: translate3d(-1221px, 0px, 0px); transition-duration: 0ms;"&gt;
+&lt;div class="swiper-slide" style="width: 407px;"&gt; &lt;a href="javascript:;" &gt;&lt;img src="{$CssDir/}Images/dogin.jpg" alt=""&gt;&lt;/a&gt; &lt;/div&gt;
+&lt;div class="swiper-slide" style="width: 407px;"&gt; &lt;a href="javascript:;" &gt;&lt;img src="{$CssDir/}Images/dogin.jpg" alt=""&gt;&lt;/a&gt; &lt;/div&gt;
+&lt;div class="swiper-slide swiper-slide-prev" style="width: 407px;"&gt; &lt;a href="javascript:;" &gt;&lt;img src="{$CssDir/}Images/dogin.jpg" alt=""&gt;&lt;/a&gt; &lt;/div&gt;
+&lt;div class="swiper-slide swiper-slide-active" style="width: 407px;"&gt; &lt;a href="javascript:;" &gt;&lt;img src="{$CssDir/}Images/dogin.jpg" alt=""&gt;&lt;/a&gt; &lt;/div&gt;
+&lt;div class="swiper-slide swiper-slide-next" style="width: 407px;"&gt; &lt;a href="javascript:;"&gt;&lt;img src="{$CssDir/}Images/dogin.jpg" alt=""&gt;&lt;/a&gt; &lt;/div&gt;
+&lt;div class="swiper-slide" style="width: 407px;"&gt; &lt;a href="javascript:;" &gt;&lt;img src="{$CssDir/}Images/dogin.jpg" alt=""&gt;&lt;/a&gt; &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="preview thumbnail_box"&gt; &lt;a class="arrow-left" href="javascript:;"&gt;&lt;i class="fa fa-angle-left" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt; &lt;a class="arrow-right" href="javascript:;"&gt;&lt;i class="fa fa-angle-right" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;div class="swiper-container swiper-container-horizontal"&gt;
+&lt;div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"&gt;
+&lt;div class="swiper-slide swiper-slide-active thumbnail_list"&gt; &lt;img src="{$CssDir/}Images/dogin.jpg" alt=""&gt; &lt;/div&gt;
+&lt;div class="swiper-slide swiper-slide-next thumbnail_list"&gt; &lt;img src="{$CssDir/}Images/dogin.jpg" alt=""&gt; &lt;/div&gt;
+&lt;div class="swiper-slide thumbnail_list"&gt; &lt;img src="{$CssDir/}Images/dogin.jpg" alt=""&gt; &lt;/div&gt;
+&lt;div class="swiper-slide active-nav thumbnail_list"&gt; &lt;img src="{$CssDir/}Images/dogin.jpg" alt=""&gt; &lt;/div&gt;
+&lt;div class="swiper-slide thumbnail_list"&gt; &lt;img src="{$CssDir/}Images/dogin.jpg" alt=""&gt; &lt;/div&gt;
+&lt;div class="swiper-slide slide6 thumbnail_list"&gt; &lt;img src="{$CssDir/}Images/dogin.jpg" alt=""&gt; &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-md-5 shop_content_c"&gt;
+&lt;h1&gt;{Field="Title"/}&lt;/h1&gt;
+&lt;div class="s_Price_box"&gt;
+&lt;p&gt;均价：&lt;strong&gt;￥{Field="price"/}&lt;/strong&gt; &lt;span&gt;浏览次数:{Field="Hits"/}&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;卖家承诺：{Field="fwbz"/}&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="dog_deta"&gt;
+&lt;p&gt;&lt;span class="dog_deta_l"&gt;狗狗品种：&lt;strong&gt;{Field="ggpz"/}&lt;/strong&gt;&lt;/span&gt;&lt;span class="dog_deta_r"&gt;待售犬只：&lt;strong&gt;{Field="dsqz"/}&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="dog_deta_l"&gt;狗狗性别：&lt;strong&gt;{Field="sex"/}&lt;/strong&gt;&lt;/span&gt;&lt;span class="dog_deta_r"&gt;疫苗情况：&lt;strong&gt;{Field="ymzk"/}&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="dog_deta_l"&gt;狗狗年龄：&lt;strong&gt;{Field="ql"/}&lt;/strong&gt;&lt;/span&gt;&lt;span class="dog_deta_r"&gt;驱虫情况：&lt;strong&gt;{Field="qu"/}&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="dog_deta_l"&gt;能否视频：&lt;strong&gt;{Field="video"/}&lt;/strong&gt;&lt;/span&gt;&lt;span class="dog_deta_r"&gt;有效期：&lt;strong&gt;{Field="times"/}&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="dog_deta"&gt;
+&lt;p&gt;&lt;span class="dog_deta_l"&gt;联系人：&lt;strong&gt;{Field="ren"/}&lt;/strong&gt;&lt;/span&gt;&lt;span class="dog_deta_r"&gt;所在地区：&lt;strong&gt;{Field="diqu"/}&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="dog_deta_l"&gt;联系电话：&lt;strong&gt;{Field="tel"/}&lt;/strong&gt;&lt;/span&gt;&lt;span class="dog_deta_r"&gt;异地运费：&lt;strong&gt;￥ {Field="fei"/}&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="dog_deta_l"&gt;微信账号：&lt;strong&gt;{Field="wechat"/}&lt;/strong&gt;&lt;/span&gt;&lt;span class="dog_deta_r"&gt;联系Q Q：&lt;strong&gt;&lt;a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin={Field="qq"/}&amp;site={Field="qq"/}&amp;menu=yes"&gt;{Field="qq"/}&lt;/a&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="s_statement"&gt;
+&lt;p&gt;1.请您联系说："狗市场(www.goushichang.com)看到的",谢谢！&lt;/p&gt;
+&lt;p&gt;2.该信息由用户自行发布，其真实性，合法性由发布人负责，狗市场不提供任何保证，也不承担任何法律责任！&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</LabelContent>
+    <LabelCount>1</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_CommonModel","tb_s":"ZL_C_dog"}</DataSourceType>
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

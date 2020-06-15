@@ -1,0 +1,317 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="msapplication-TileColor" content="#1A0066"/>
+<meta name="msapplication-TileImage" content="/images/win8_symbol_140x140.png"/>
+<title>谁说狗狗不爱干净?你看看它们，分明是有洁癖_狗市场_买狗卖狗领先网站_全国最大的网上狗市！</title>
+<meta name="Keywords" content="狗,狗狗,小狗,宠物狗,买狗网,卖狗网,宠物网,狗狗品种,狗狗图片,狗狗视频,狗市场">
+<meta name="Description" content="买狗、卖狗就上狗市场(Goushichang.com)！汇集全国大量买家、卖家，每天更新海量狗狗品种、狗狗图片、狗狗视频、宠物狗价格，买狗、卖狗、宠物狗交易就上狗市场!">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<link href="/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+<script src="/JS/jquery-1.11.1.min.js" ></script>
+<script src="/dist/js/bootstrap.min.js"></script>
+<link href="/dist/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="/Template/dog/style/global.css?Version=20180312" rel="stylesheet"/>
+<script src="/js/scrolltopcontrol.js"></script>
+<script src="/JS/Controls/B_User.js"></script>
+</head>
+<body>
+<div class="top">
+  <div class="container">
+	<div class="row">
+	  <div class="col-xs-12 col-sm-6 top_l">
+	  <ul>
+		<li><a href="/user/">手机登录</a></li>
+		<li><a target="_blank" href="http://www.xuetongchaxun.org/">血统查询</a></li>
+		<li><a href="/Item/93.aspx">精准推广</a></li>
+		<li><a href="/Class_8/NodeNews.aspx">会员服务</a></li>
+		</ul>
+	  </div>
+	  <div class="col-xs-12 col-sm-6 top_r">
+	  <ul>
+		<li><a href="/user/Content/MyContent">我的市场</a></li> | 
+		<li><a href="/User/">会员中心</a></li> | 
+		<li><a href="/Class_8/NodePage.aspx">网站导航</a></li>
+	  </ul>
+	  </div>
+	</div>
+  </div>
+</div>
+<!-- nav end-->
+  
+<header class="container header">
+<div class="row home_Pos">
+<div class="col-xs-12 col-sm-3 logo">
+<a href="/"><img src="/Template/dog/style/Images/logo_w.png" alt="狗市场_买狗卖狗领先网站_全国最大的网上狗市！"></a>
+</div>
+<div class="col-xs-12 col-sm-7 search_box">
+<div class="search_Box_i">
+<form class="form-inline" role="search" method="get" action="/Class_1/NodePage.aspx" target="_blank">
+<div class="input-group">
+<input type="text" class="form-control" name="n1" placeholder="全站搜索">
+<input type="text" class="hidden_input" name="n2min" value="0">
+<input type="text" name="n2max" class="hidden_input" value="9999999">
+<span class="input-group-btn">
+<button type="submit" class="btn btn-success"><i class="fa fa-search"></i> 搜索</button>
+</span>
+</div><!-- /input-group -->
+</form>
+<span>
+热门犬种：
+<a href="/Class_1/NodePage.aspx?n1=泰迪犬&n2max=999999&n2min=0">泰迪</a>
+<a href="/Class_1/NodePage.aspx?n1=比格犬&n2max=999999&n2min=0">比格</a>
+<a href="/Class_1/NodePage.aspx?n1=边牧&n2max=999999&n2min=0">边牧</a>
+  <a href="/Class_1/NodePage.aspx?n1=阿拉斯加犬&n2max=999999&n2min=0">阿拉斯加</a>
+</span>
+<span>热门城市：
+<a href="/Class_1/NodePage.aspx?n1=&n2max=9999999&n2min=0&n3=北京">北京</a>
+<a href="/Class_1/NodePage.aspx?n1=&n2max=9999999&n2min=0&n3=上海">上海</a>
+<a href="/Class_1/NodePage.aspx?n1=&n2max=9999999&n2min=0&n3=天津">天津</a>
+  <a href="/Class_1/NodePage.aspx?n1=&n2max=9999999&n2min=0&n3=重庆">重庆</a>
+</span>
+</div>
+</div>
+<div class="col-xs-12 col-sm-2 top_header_r">
+<a href="/user/Content/AddContent?NodeID=1&ModelID=50" class="btn btn-success top_header_r_b">免费发布信息</a>
+<div class="changcon"><a href="/user/Content/MyContent?NodeId=1">修改/删除信息</a></div>
+</div>
+</div>
+</header>
+<!--top_header logo 和搜索end-->
+
+<nav class="navbar  container my_nav">
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		<span class="sr-only">狗市场网</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	  </button>
+	</div>
+	<div class="navbar-collapse collapse home_Bottom_b" id="bs-example-navbar-collapse-1" aria-expanded="false" >
+	  <ul class="nav navbar-nav nav_list">
+		<li class=""><a href="/">首页</a></li>
+		<li><a href="/buy/index.html">我要买狗</a></li>
+		<li><a href="/user/Content/AddContent?NodeID=1&ModelID=50">我要卖狗</a></li>
+		<li><a href="/Class_3/Default.aspx">各地市场</a></li>
+		<li><a href="/Class_4/Default.aspx">狗狗名片</a></li>
+		<li><a href="/info/news/index.shtml">狗狗快讯</a></li>
+		<li><a href="/Class_22/Default.aspx">问答</a></li>
+		<li><a href="http://www.xuetongchaxun.org/" target="_blank">血统查询</a></li>
+	  </ul>
+	  <ul class="nav navbar-nav navbar-right">
+		<li><a href="/Class_16/Default.aspx">会员APP下载</a></li>
+	  </ul>
+	  </div>
+</nav>
+<!--nav end-->
+<div class="news_body">
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-md-9">
+
+<div class="container my_Bread">
+<nav aria-label="breadcrumb" role="navigation" >
+<ol class="breadcrumb">
+<li class="breadcrumb-item">当前位置：</li>
+<li class="breadcrumb-item"><a href="/">狗市场</a></li>
+<li class="breadcrumb-item"><a href="/info/news/index.shtml">狗市场_狗狗快讯_狗狗新闻_狗狗赛事</a></li>
+</ol>
+</nav>
+</div>
+<!--面包屑 end-->
+
+
+<div class="m_Content_l">
+<h1>谁说狗狗不爱干净?你看看它们，分明是有洁癖</h1>
+<div class="m_Abbr">
+ <span id="CreateTime">发表于：2018-03-22</span> <span id="Hits">浏览数：<SCRIPT language=javascript src="/Common/GetHits.aspx?id=86"></SCRIPT> </span>
+<span id="favs"><a href="/user/content/addtofav?infoid=86&type=1&title=谁说狗狗不爱干净?你看看它们，分明是有洁癖&url=http://goushichang.com/item/86.aspx" target="_blank"><i class="fa fa-heart-o" aria-hidden="true"></i> 收藏</a></SCRIPT>  <a href="/Class_100/NodePage.aspx?t=谁说狗狗不爱干净?你看看它们，分明是有洁癖-来自狗市场_买狗卖狗领先网站_全国最大的网上狗市！&urls=http://goushichang.com/item/86.aspx" target="_blank"><i class="fa  fa-share-alt-square"></i>分享网址</a></span>
+</div>
+<div class="m_Content"><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 15px; padding: 0px 0px 15px; border: 0px; outline: 0px; vertical-align: baseline; text-indent: 2em; color: rgb(42, 42, 42); font-family: &quot;Microsoft YaHei&quot;, Verdana, Arial; font-size: 18px; text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">泥地里打滚玩的不亦可乎的<span class="keylink" style="box-sizing: border-box; margin: 0px; padding: 0px 3px; border: 0px; outline: 0px; vertical-align: baseline;">狗狗</span>很常见，那么，有洁癖的狗狗你见过么?小编下面要介绍的这几只，就是来自处女星的洁癖汪星人。</span></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 15px; padding: 0px 0px 15px; border: 0px; outline: 0px; vertical-align: baseline; text-indent: 2em; color: rgb(42, 42, 42); font-family: &quot;Microsoft YaHei&quot;, Verdana, Arial; font-size: 18px; text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);">第一个来自网友吐槽他家白柴的洁癖事件：前几天，网友骑着自己心爱的小电驴带着白柴柴出门玩，可就在半路等红灯的时候，这家伙竟然在小电驴上拉屎了!!!关键是拉完之后还立马跳下车，露出一脸嫌弃的表情。网友当时那个崩溃啊，你自己拉的，你还好意思嫌弃?可白柴柴下一秒的举动，让网友的心态彻底崩了，因为这货竟然站起来，把粘在自己脚上的粑粑，抹在了网友的身上......</p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 15px; padding: 0px 0px 15px; border: 0px; outline: 0px; vertical-align: baseline; text-indent: 0em; color: rgb(42, 42, 42); font-family: &quot;Microsoft YaHei&quot;, Verdana, Arial; font-size: 18px; white-space: normal; background-color: rgb(255, 255, 255); text-align: center;"><img src="/UploadFiles/Image/20180322/6365730535676682953161263.gif" title="1621417688.gif" alt="1621417688.gif"/></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 15px; padding: 0px 0px 15px; border: 0px; outline: 0px; vertical-align: baseline; text-indent: 2em; color: rgb(42, 42, 42); font-family: &quot;Microsoft YaHei&quot;, Verdana, Arial; font-size: 18px; text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);">随后网友也是忍住了虐狗的冲动，把车上的粑粑收拾干净，然后打算回家换衣服，可此时，这货竟然拒绝上车，大概是不想让见过粑粑的踏板弄脏自己的爪爪吧.......</p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 15px; padding: 0px 0px 15px; border: 0px; outline: 0px; vertical-align: baseline; text-indent: 2em; color: rgb(42, 42, 42); font-family: &quot;Microsoft YaHei&quot;, Verdana, Arial; font-size: 18px; text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);">第二个来自网友分享的自家棉花糖<span class="keylink" style="box-sizing: border-box; margin: 0px; padding: 0px 3px; border: 0px; outline: 0px; vertical-align: baseline;">比熊犬</span>的洁癖事件：下雪后，狗狗们肯定都会表现的非常兴奋，这里跳跳，那里跑跑的，可这只比熊就不一样了，人家可是处女座哒!</p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 15px; padding: 0px 0px 15px; border: 0px; outline: 0px; vertical-align: baseline; text-indent: 0em; color: rgb(42, 42, 42); font-family: &quot;Microsoft YaHei&quot;, Verdana, Arial; font-size: 18px; white-space: normal; background-color: rgb(255, 255, 255); text-align: center;"><br/></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 15px; padding: 0px 0px 15px; border: 0px; outline: 0px; vertical-align: baseline; text-indent: 2em; color: rgb(42, 42, 42); font-family: &quot;Microsoft YaHei&quot;, Verdana, Arial; font-size: 18px; text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);">这天网友本来是带着它出来玩雪的，可没想到，这家伙竟然脚下踩着塑料袋，一爪扶着旁边的车，死活不挨地，“哼!人家可是一只美狗子，才不会跟那些凡夫俗狗一样呢!”</p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 15px; padding: 0px 0px 15px; border: 0px; outline: 0px; vertical-align: baseline; text-indent: 0em; color: rgb(42, 42, 42); font-family: &quot;Microsoft YaHei&quot;, Verdana, Arial; font-size: 18px; white-space: normal; background-color: rgb(255, 255, 255); text-align: center;"><br/></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 15px; padding: 0px 0px 15px; border: 0px; outline: 0px; vertical-align: baseline; text-indent: 2em; color: rgb(42, 42, 42); font-family: &quot;Microsoft YaHei&quot;, Verdana, Arial; font-size: 18px; text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);">第三只，依然是一只柴柴，不一样的只有毛色，这是一只黄柴，一天雨后，主人带着小柴出门散步，可就在小柴遇到一处积水时，洁癖症瞬间爆发，只见它踮起小脚，在水坑中缓慢的移动，然后一个转身走向的回家的方向，对于对散步有着执念的柴柴，大概只有洁癖能促使它们回家吧。</p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 15px; padding: 0px 0px 15px; border: 0px; outline: 0px; vertical-align: baseline; text-indent: 0em; color: rgb(42, 42, 42); font-family: &quot;Microsoft YaHei&quot;, Verdana, Arial; font-size: 18px; white-space: normal; background-color: rgb(255, 255, 255); text-align: center;"><br/></p><p><br/></p></div>
+<div id="T_page"></div>
+</div>
+
+
+</div>
+<div class="col-xs-12 col-md-3">
+
+<div class="news_list">
+<div class="news_list_t"><h2>猜你喜欢</h2><div class="clearfix"></div></div>
+<div class="news_list_c">
+<ul class="list-unstyled">
+<!--
+<li>
+	<img src="/Template/dog/style/Images/dog5.jpg" alt="">
+	<p><a href="#">极品萨摩耶在这里，保障纯种和健康、十佳犬</a></p>
+	<span>2400元</span>
+</li>
+-->
+
+<li>
+  <div><a href="/Item/178.aspx"><img src="/uploadfiles/system/field/images/20180430/20180430aihpc5.jpg" alt="湖南贵宾小狗哪里有卖，湖南想养贵宾小狗的朋友看过来"></a></div>
+	<p><a href="/Item/178.aspx">湖南贵宾小狗哪里有卖，湖南想养贵宾小狗的朋友看过来</a></p>
+	<span>价格：￥1800</span>
+</li>
+
+<li>
+  <div><a href="/Item/189.aspx"><img src="/uploadfiles/system/field/images/20180514/20180514rdy5ns.jpg" alt="云南哪里买纯种泰迪犬 云南卖泰迪小狗的地方 云南犬舍出售泰迪小狗"></a></div>
+	<p><a href="/Item/189.aspx">云南哪里买纯种泰迪犬 云南卖泰迪小狗的地方 云南犬舍出售泰迪小狗</a></p>
+	<span>价格：￥1600</span>
+</li>
+
+<li>
+  <div><a href="/Item/174.aspx"><img src="/uploadfiles/system/field/images/20180428/20180428m3mbge.jpg" alt="基地常年直销德牧幼犬，德牧工作犬，德牧护卫犬"></a></div>
+	<p><a href="/Item/174.aspx">基地常年直销德牧幼犬，德牧工作犬，德牧护卫犬</a></p>
+	<span>价格：￥1530</span>
+</li>
+
+<li>
+  <div><a href="/Item/240.aspx"><img src="/uploadfiles/system/field/images/20180612/2018061278mxpe.jpg" alt="北京泰迪熊犬舍 北京纯种泰迪小狗 北京买泰迪幼犬的地方"></a></div>
+	<p><a href="/Item/240.aspx">北京泰迪熊犬舍 北京纯种泰迪小狗 北京买泰迪幼犬的地方</a></p>
+	<span>价格：￥1600</span>
+</li>
+
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div><!--主体结束 -->
+<div class="Assis_Div"></div>
+
+<section class="firendsite">
+<div class="container">
+<strong>友情链接</strong>
+<ul>
+	
+<li><a href="http://www.baidu.com" target="_blank" title="乐维斯">乐维斯 </a></li>
+
+<li><a href="http://www.baidu.com" target="_blank" title="手机靓号网">手机靓号网 </a></li>
+
+<li><a href="http://www.baidu.com" target="_blank" title="手工制作">手工制作 </a></li>
+
+<li><a href="http://www.baidu.com" target="_blank" title="名鞋库">名鞋库 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="上海房产网">上海房产网 </a></li>
+
+<li><a href="http://www.hao123.com/chongwu" target="_blank" title="hao123宠物">hao123宠物 </a></li>
+
+<li><a href="http://www.chinaz.com/" target="_blank" title="站长之家">站长之家 </a></li>
+
+<li><a href="http://www.baidu.com" target="_blank" title="免费发布信息">免费发布信息 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="编制人生">编制人生 </a></li>
+
+<li><a href="https://www.chinapp.com/" target="_blank" title="中国品牌网">中国品牌网 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="加盟网">加盟网 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="慧聪网">慧聪网 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="返利网">返利网 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="五笔输入法">五笔输入法 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="钱香金融">钱香金融 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="旅游网">旅游网 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="网上114">网上114 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="淘狗网">淘狗网 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="发型图片">发型图片 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="重庆人才网">重庆人才网 </a></li>
+
+<li><a href="http://www.jihaoba.com/" target="_blank" title="手机靓号网">手机靓号网 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="手工制作网">手工制作网 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="名鞋网">名鞋网 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="乐维斯">乐维斯 </a></li>
+
+<li><a href="http://www.baidu.com" target="_blank" title="我要卖狗">我要卖狗 </a></li>
+
+<li><a href="http://www.goushichang.com/" target="_blank" title="狗市场网">狗市场网 </a></li>
+
+<li><a href="http://www.baidu.com" target="_blank" title="狗狗网">狗狗网 </a></li>
+
+<li><a href="http://www.baidu.com" target="_blank" title="我要买狗">我要买狗 </a></li>
+
+</ul>
+</div>
+</section>
+<!--firendsite-->
+
+
+<footer class="container footer">
+<ul>
+	<li><a href="/Item/1.aspx">关于我们</a></li> |
+	<li><a href="/Item/2.aspx">英才招聘</a></li> |
+	<li><a href="/Item/3.aspx">联系我们</a></li> |
+	<li><a href="/Class_8/NodePage.aspx">网站地图</a></li> |
+	<li><a href="/guest/">意见反馈</a></li> |
+	<li><a href="#">帮助中心</a></li> |
+	<li><a href="#">客服热线 0000-88888888</a></li> 
+</ul>
+<p>
+All Rights Reserved | <a href="http://www.miibeian.gov.cn">滇ICP备18002345号 </a>| &copy </a>2018-现在 Goushichang.com 版权所有 <p>免责声明：狗市场站点所有狗狗出售信息系用户发布，其内容的真实性及合法性由发布人自行负责，狗市场不提供任何保证，亦不承担任何法律责任！</p>
+
+
+</p>
+</footer>
+<!--footer end-->
+<script>
+var buser = new B_User();//会员ajax登录状态需要结合JS/Controls/B_User.js引用同步生效
+buser.IsLogged(function(data,flag){
+	if(flag){
+		data=JSON.parse(data);
+		$(".top_r ul").append('<li><a href="/User/User/LogOut" ><i class="fa fa-sign-out" aria-hidden="true"></i> 退出</a></li> | <li><a href="/User/"><i class="fa z01-icon095"></i> [ERR:(GetuserName)解析失败]</a></li>');
+		//$(".top_r  .dropdown-toggle").html("<i class='fa fa-user' aria-hidden='true'></i> ")
+		$(".nav_user>a").html(data.UserName);
+		$(".nav_user .dropdown-menu a:nth-child(1)").html("会员中心");
+		$(".nav_user .dropdown-menu a:nth-child(2)").remove();
+		$(".nav_user .dropdown-menu a:nth-child(3)").addClass("d-block");
+		$(".nav_user .dropdown-menu a:nth-child(2)").addClass("d-block");
+        $("#iframe_comm").show();
+	}
+	else{
+		$(".top_r ul").append(' <li><a href="/User/Register">注册</a></li> | <li><a href="/User/">登录</a></li>');
+	}
+});
+
+function LogoutFun(){
+	buser.Logout(function(){location=location;});
+}
+//顶部导航选择状态
+	$(function(){
+	if(86==93){
+	}else{
+		$("#bs-example-navbar-collapse-1 li").eq("5").addClass("active");
+	}
+})
+
+//输出狗狗图册
+var imgjosn='{SField sid="狗狗名片数据源标签" FD="ggtp" page="0"/}';
+var imgs = eval(imgjosn);
+var flieurl ="/UploadFiles//";
+for(var i=0;i<5;i++)//只显示4张
+{
+$(".m_content_img ul").prepend('<li><img src='+flieurl+imgs[i].url+'  alt=""></li>')
+}
+</script>
+</body>
+</html>
+<script type="text/javascript" src="/JS/Controls/ZL_Dialog.js"></script>

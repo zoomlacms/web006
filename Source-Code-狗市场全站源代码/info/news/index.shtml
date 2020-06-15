@@ -1,0 +1,383 @@
+﻿
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta name="msapplication-TileColor" content="#1A0066"/>
+<meta name="msapplication-TileImage" content="/images/win8_symbol_140x140.png"/>
+<title>狗市场_买狗卖狗领先网站_全国最大的网上狗市！_首页-狗市场_狗狗快讯_狗狗新闻_狗狗赛事</title>
+<meta name="Keywords" content="狗,狗狗,小狗,宠物狗,买狗网,卖狗网,宠物网,狗狗品种,狗狗图片,狗狗视频,狗市场">
+<meta name="Description" content="买狗、卖狗就上狗市场(Goushichang.com)！汇集全国大量买家、卖家，每天更新海量狗狗品种、狗狗图片、狗狗视频、宠物狗价格，买狗、卖狗、宠物狗交易就上狗市场!">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<link href="/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+<script src="/JS/jquery-1.11.1.min.js" ></script>
+<script src="/dist/js/bootstrap.min.js"></script>
+<link href="/dist/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="/Template/dog/style/global.css?Version=20180312" rel="stylesheet"/>
+<script src="/js/scrolltopcontrol.js"></script>
+<script src="/JS/Controls/B_User.js"></script>
+</head>
+<body >
+<div class="top">
+  <div class="container">
+	<div class="row">
+	  <div class="col-xs-12 col-sm-6 top_l">
+	  <ul>
+		<li><a href="/user/">手机登录</a></li>
+		<li><a target="_blank" href="http://www.xuetongchaxun.org/">血统查询</a></li>
+		<li><a href="/Item/93.aspx">精准推广</a></li>
+		<li><a href="/Class_8/NodeNews.aspx">会员服务</a></li>
+		</ul>
+	  </div>
+	  <div class="col-xs-12 col-sm-6 top_r">
+	  <ul>
+		<li><a href="/user/Content/MyContent">我的市场</a></li> | 
+		<li><a href="/User/">会员中心</a></li> | 
+		<li><a href="/Class_8/NodePage.aspx">网站导航</a></li>
+	  </ul>
+	  </div>
+	</div>
+  </div>
+</div>
+<!-- nav end-->
+  
+<header class="container header">
+<div class="row home_Pos">
+<div class="col-xs-12 col-sm-3 logo">
+<a href="/"><img src="/Template/dog/style/Images/logo_w.png" alt="狗市场_买狗卖狗领先网站_全国最大的网上狗市！"></a>
+</div>
+<div class="col-xs-12 col-sm-7 search_box">
+<div class="search_Box_i">
+<form class="form-inline" role="search" method="get" action="/Class_1/NodePage.aspx" target="_blank">
+<div class="input-group">
+<input type="text" class="form-control" name="n1" placeholder="全站搜索">
+<input type="text" class="hidden_input" name="n2min" value="0">
+<input type="text" name="n2max" class="hidden_input" value="9999999">
+<span class="input-group-btn">
+<button type="submit" class="btn btn-success"><i class="fa fa-search"></i> 搜索</button>
+</span>
+</div><!-- /input-group -->
+</form>
+<span>
+热门犬种：
+<a href="/Class_1/NodePage.aspx?n1=泰迪犬&n2max=999999&n2min=0">泰迪</a>
+<a href="/Class_1/NodePage.aspx?n1=比格犬&n2max=999999&n2min=0">比格</a>
+<a href="/Class_1/NodePage.aspx?n1=边牧&n2max=999999&n2min=0">边牧</a>
+  <a href="/Class_1/NodePage.aspx?n1=阿拉斯加犬&n2max=999999&n2min=0">阿拉斯加</a>
+</span>
+<span>热门城市：
+<a href="/Class_1/NodePage.aspx?n1=&n2max=9999999&n2min=0&n3=北京">北京</a>
+<a href="/Class_1/NodePage.aspx?n1=&n2max=9999999&n2min=0&n3=上海">上海</a>
+<a href="/Class_1/NodePage.aspx?n1=&n2max=9999999&n2min=0&n3=天津">天津</a>
+  <a href="/Class_1/NodePage.aspx?n1=&n2max=9999999&n2min=0&n3=重庆">重庆</a>
+</span>
+</div>
+</div>
+<div class="col-xs-12 col-sm-2 top_header_r">
+<a href="/user/Content/AddContent?NodeID=1&ModelID=50" class="btn btn-success top_header_r_b">免费发布信息</a>
+<div class="changcon"><a href="/user/Content/MyContent?NodeId=1">修改/删除信息</a></div>
+</div>
+</div>
+</header>
+<!--top_header logo 和搜索end-->
+
+<nav class="navbar  container my_nav">
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		<span class="sr-only">狗市场网</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	  </button>
+	</div>
+	<div class="navbar-collapse collapse home_Bottom_b" id="bs-example-navbar-collapse-1" aria-expanded="false" >
+	  <ul class="nav navbar-nav nav_list">
+		<li class=""><a href="/">首页</a></li>
+		<li><a href="/Class_1/Default.aspx">我要买狗</a></li>
+		<li><a href="/user/Content/AddContent?NodeID=1&ModelID=50">我要卖狗</a></li>
+		<li><a href="/qggs/index.html">各地市场</a></li>
+		<li><a href="/ggmp/index.html">狗狗名片</a></li>
+		<li><a href="/Class_5/Default.aspx">狗狗快讯</a></li>
+		<li><a href="/Class_22/Default.aspx">问答</a></li>
+		<li><a href="http://www.xuetongchaxun.org/" target="_blank">血统查询</a></li>
+	  </ul>
+	  <ul class="nav navbar-nav navbar-right">
+		<li><a href="/Class_16/Default.aspx">会员APP下载</a></li>
+	  </ul>
+	  </div>
+</nav>
+<!--nav end-->
+
+<div class="container my_Bread">
+<nav aria-label="breadcrumb" role="navigation">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">当前位置：</li>
+<li class="breadcrumb-item"><a href="/">狗市场</a></li>
+<li class="breadcrumb-item"><a href="/Class_5/Default.aspx">狗市场_狗狗快讯_狗狗新闻_狗狗赛事</a></li>
+</ol>
+</nav>
+</div>
+<!--面包屑 end-->
+
+<div class="m_rnews container">
+<div class="row list_Fy">
+<div class="col-xs-12 col-sm-10 col-md-10 m_rnews_l">
+<ul>
+
+<li class="m_rnews_list">
+  <div class="m_rnews_list_l col-xs-4 col-sm-2 col-md-2"><a href="/info/news/78.shtml"><img src="/UploadFiles/Image/20180322/6365730454159823943469127.gif" alt="泰迪无视老虎，老虎表示：你好歹礼貌性的怕一下啊!"  onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"></a></div>
+  <div class="m_rnews_list_r col-xs-8 col-sm-10 col-md-10 m_rnews_dz">
+    <h1><a href="/info/news/78.shtml" title="泰迪无视老虎，老虎表示：你好歹礼貌性的怕一下啊! ">泰迪无视老虎，老虎表示：你好歹<i class="fa fa-arrow-up" aria-hidden="true"></i></a></h1>
+    <p>泰迪无视老虎，老虎表示：你好歹礼貌性的怕一下啊!<a href="/info/news/78.shtml"> [详情]</a></p>
+    <div class="r_Statistics"><i class="fa fa-eye" aria-hidden="true"></i> 阅读: 24 <span> 2018/3/22 8:19:25</span></div>
+  </div>
+</li>
+
+<li class="m_rnews_list">
+  <div class="m_rnews_list_l col-xs-4 col-sm-2 col-md-2"><a href="/info/news/79.shtml"><img src="/UploadFiles/Image/20180322/6365730465741865584553509.png" alt="吉娃娃被主人强行叫醒，倒头秒睡技能满点!"  onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"></a></div>
+  <div class="m_rnews_list_r col-xs-8 col-sm-10 col-md-10 m_rnews_dz">
+    <h1><a href="/info/news/79.shtml" title="吉娃娃被主人强行叫醒，倒头秒睡技能满点! ">吉娃娃被主人强行叫醒，倒头秒睡<i class="fa fa-arrow-up" aria-hidden="true"></i></a></h1>
+    <p>吉娃娃被主人强行叫醒，倒头秒睡技能满点!<a href="/info/news/79.shtml"> [详情]</a></p>
+    <div class="r_Statistics"><i class="fa fa-eye" aria-hidden="true"></i> 阅读: 12 <span> 2018/3/22 8:19:25</span></div>
+  </div>
+</li>
+
+
+<li class="m_rnews_list">
+  <div class="m_rnews_list_l col-xs-4 col-sm-2 col-md-2"><a href="/info/news/72.shtml"><img src="/uploadfiles/image/20180322/6365730386572736731586078.png" alt="比熊跟着小土狗跑了，主人发现以后，直接踢飞小土狗"onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"></a></div>
+  <div class="m_rnews_list_r col-xs-8 col-sm-10 col-md-10">
+    <h1><a href="/info/news/72.shtml" title="比熊跟着小土狗跑了，主人发现以后，直接踢飞小土狗">比熊跟着小土狗跑了，主人发现以后，直接踢飞小土狗</a></h1>
+    <p>比熊跟着小土狗跑了，主人发现以后，直接踢飞小土狗<a href="/info/news/72.shtml"> [详情]</a></p>
+    <div class="r_Statistics"><i class="fa fa-eye" aria-hidden="true"></i> 阅读: 43 <span> 2018/3/22 8:19:25</span></div>
+  </div>
+</li>
+
+<li class="m_rnews_list">
+  <div class="m_rnews_list_l col-xs-4 col-sm-2 col-md-2"><a href="/info/news/235.shtml"><img src="/UploadFiles/nopic.svg" alt="穿山甲夜游闹市区被狗围堵 云南文山好心市民忙解救"onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"></a></div>
+  <div class="m_rnews_list_r col-xs-8 col-sm-10 col-md-10">
+    <h1><a href="/info/news/235.shtml" title="穿山甲夜游闹市区被狗围堵 云南文山好心市民忙解救">穿山甲夜游闹市区被狗围堵 云南文山好心市民忙解救</a></h1>
+    <p><a href="/info/news/235.shtml"> [详情]</a></p>
+    <div class="r_Statistics"><i class="fa fa-eye" aria-hidden="true"></i> 阅读: 13 <span> 2018/6/12 10:15:05</span></div>
+  </div>
+</li>
+
+<li class="m_rnews_list">
+  <div class="m_rnews_list_l col-xs-4 col-sm-2 col-md-2"><a href="/info/news/82.shtml"><img src="/uploadfiles/image/20180322/6365730500702191159878524.png" alt="一顿吃下6个面包，阿拉斯加：我是来吃垮警察局的"onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"></a></div>
+  <div class="m_rnews_list_r col-xs-8 col-sm-10 col-md-10">
+    <h1><a href="/info/news/82.shtml" title="一顿吃下6个面包，阿拉斯加：我是来吃垮警察局的">一顿吃下6个面包，阿拉斯加：我是来吃垮警察局的</a></h1>
+    <p>一顿吃下6个面包，阿拉斯加：我是来吃垮警察局的<a href="/info/news/82.shtml"> [详情]</a></p>
+    <div class="r_Statistics"><i class="fa fa-eye" aria-hidden="true"></i> 阅读: 10 <span> 2018/3/22 8:19:25</span></div>
+  </div>
+</li>
+
+<li class="m_rnews_list">
+  <div class="m_rnews_list_l col-xs-4 col-sm-2 col-md-2"><a href="/info/news/75.shtml"><img src="/uploadfiles/image/20180322/6365730421464042513053548.png" alt="流浪狗落水六天终于得救，消防员霸气回应：没人养我来养!"onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"></a></div>
+  <div class="m_rnews_list_r col-xs-8 col-sm-10 col-md-10">
+    <h1><a href="/info/news/75.shtml" title="流浪狗落水六天终于得救，消防员霸气回应：没人养我来养!">流浪狗落水六天终于得救，消防员霸气回应：没人养我来</a></h1>
+    <p>流浪狗落水六天终于得救，消防员霸气回应：没人养我来<a href="/info/news/75.shtml"> [详情]</a></p>
+    <div class="r_Statistics"><i class="fa fa-eye" aria-hidden="true"></i> 阅读: 9 <span> 2018/5/3 20:33:11</span></div>
+  </div>
+</li>
+
+<li class="m_rnews_list">
+  <div class="m_rnews_list_l col-xs-4 col-sm-2 col-md-2"><a href="/info/news/73.shtml"><img src="/uploadfiles/image/20180322/6365730392960686159838573.jpg" alt="比格犬双爪紧抓车窗，恋恋不舍，以为主人不要它了"onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"></a></div>
+  <div class="m_rnews_list_r col-xs-8 col-sm-10 col-md-10">
+    <h1><a href="/info/news/73.shtml" title="比格犬双爪紧抓车窗，恋恋不舍，以为主人不要它了">比格犬双爪紧抓车窗，恋恋不舍，以为主人不要它了</a></h1>
+    <p>比格犬双爪紧抓车窗，恋恋不舍，以为主人不要它了<a href="/info/news/73.shtml"> [详情]</a></p>
+    <div class="r_Statistics"><i class="fa fa-eye" aria-hidden="true"></i> 阅读: 5 <span> 2018/3/22 8:19:25</span></div>
+  </div>
+</li>
+
+<li class="m_rnews_list">
+  <div class="m_rnews_list_l col-xs-4 col-sm-2 col-md-2"><a href="/info/news/83.shtml"><img src="/uploadfiles/image/20180322/6365730509874128193825053.png" alt="胖字果然不能随便说，边牧：给你个眼神自己体会"onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"></a></div>
+  <div class="m_rnews_list_r col-xs-8 col-sm-10 col-md-10">
+    <h1><a href="/info/news/83.shtml" title="胖字果然不能随便说，边牧：给你个眼神自己体会">胖字果然不能随便说，边牧：给你个眼神自己体会</a></h1>
+    <p>胖字果然不能随便说，边牧：给你个眼神自己体会<a href="/info/news/83.shtml"> [详情]</a></p>
+    <div class="r_Statistics"><i class="fa fa-eye" aria-hidden="true"></i> 阅读: 5 <span> 2018/3/22 8:19:25</span></div>
+  </div>
+</li>
+
+<li class="m_rnews_list">
+  <div class="m_rnews_list_l col-xs-4 col-sm-2 col-md-2"><a href="/info/news/77.shtml"><img src="/uploadfiles/image/20180322/6365730443704639399245979.gif" alt="小金毛嫌弃小哈士奇太二，上去就是一巴掌"onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"></a></div>
+  <div class="m_rnews_list_r col-xs-8 col-sm-10 col-md-10">
+    <h1><a href="/info/news/77.shtml" title="小金毛嫌弃小哈士奇太二，上去就是一巴掌">小金毛嫌弃小哈士奇太二，上去就是一巴掌</a></h1>
+    <p>小金毛嫌弃小哈士奇太二，上去就是一巴掌<a href="/info/news/77.shtml"> [详情]</a></p>
+    <div class="r_Statistics"><i class="fa fa-eye" aria-hidden="true"></i> 阅读: 5 <span> 2018/3/22 8:19:25</span></div>
+  </div>
+</li>
+
+<li class="m_rnews_list">
+  <div class="m_rnews_list_l col-xs-4 col-sm-2 col-md-2"><a href="/info/news/80.shtml"><img src="/uploadfiles/image/20180322/6365730475441613326852796.png" alt="明明都是萨摩耶，命运却如此不同"onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"></a></div>
+  <div class="m_rnews_list_r col-xs-8 col-sm-10 col-md-10">
+    <h1><a href="/info/news/80.shtml" title="明明都是萨摩耶，命运却如此不同">明明都是萨摩耶，命运却如此不同</a></h1>
+    <p>明明都是萨摩耶，命运却如此不同<a href="/info/news/80.shtml"> [详情]</a></p>
+    <div class="r_Statistics"><i class="fa fa-eye" aria-hidden="true"></i> 阅读: 5 <span> 2018/3/22 8:19:25</span></div>
+  </div>
+</li>
+
+<li class="m_rnews_list">
+  <div class="m_rnews_list_l col-xs-4 col-sm-2 col-md-2"><a href="/info/news/236.shtml"><img src="/UploadFiles/nopic.svg" alt="水岸华庭居民收留拉布拉多犬 想找到狗的主人"onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"></a></div>
+  <div class="m_rnews_list_r col-xs-8 col-sm-10 col-md-10">
+    <h1><a href="/info/news/236.shtml" title="水岸华庭居民收留拉布拉多犬 想找到狗的主人">水岸华庭居民收留拉布拉多犬 想找到狗的主人</a></h1>
+    <p><a href="/info/news/236.shtml"> [详情]</a></p>
+    <div class="r_Statistics"><i class="fa fa-eye" aria-hidden="true"></i> 阅读: 4 <span> 2018/6/12 10:21:00</span></div>
+  </div>
+</li>
+
+<li class="m_rnews_list">
+  <div class="m_rnews_list_l col-xs-4 col-sm-2 col-md-2"><a href="/info/news/74.shtml"><img src="/uploadfiles/image/20180322/6365730409577726799270530.png" alt="主人去世，忠犬竟然咬舌自尽前去陪伴"onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"></a></div>
+  <div class="m_rnews_list_r col-xs-8 col-sm-10 col-md-10">
+    <h1><a href="/info/news/74.shtml" title="主人去世，忠犬竟然咬舌自尽前去陪伴">主人去世，忠犬竟然咬舌自尽前去陪伴</a></h1>
+    <p>主人去世，忠犬竟然咬舌自尽前去陪伴<a href="/info/news/74.shtml"> [详情]</a></p>
+    <div class="r_Statistics"><i class="fa fa-eye" aria-hidden="true"></i> 阅读: 4 <span> 2018/3/22 8:19:25</span></div>
+  </div>
+</li>
+
+  <div class="text-center"><style>
+.pagination-lg .page-link {
+    padding: .5rem 1rem;
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
+.page-item.active .page-link {
+    background-color: rgba(110,216,138,.58);
+    border-color: rgba(110,216,138,0.6);
+}
+.page-link {
+    color: #666;
+}
+</style>
+<nav aria-label="..." class="d-flex" style="justify-content: center;">
+<ul class="pagination pagination-lg" style="align-item:center;">
+<li class="page-item" ><a class="page-link" href="index.html">&laquo;</a></li>
+
+<li class="page-item active" ><a  class="page-link" href="index.html">1</a></li> 
+<li class="page-item" ><a class="page-link" href="createhtml2.aspx" id="bots2">2</a></li>  
+<li class="page-item" ><a class="page-link" href="createhtml2.aspx">&raquo;</a></li>
+</ul>
+</nav></div>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-2 col-md-2 m_rnews_r">
+<a href="/user/Content/AddContent?NodeID=5&ModelID=2">+ 发表文章</a>
+</div>
+</div>
+<!--newscon end-->
+
+
+
+<section class="firendsite">
+<div class="container">
+<strong>友情链接</strong>
+<ul>
+	
+<li><a href="http://www.baidu.com" target="_blank" title="乐维斯">乐维斯 </a></li>
+
+<li><a href="http://www.baidu.com" target="_blank" title="手机靓号网">手机靓号网 </a></li>
+
+<li><a href="http://www.baidu.com" target="_blank" title="手工制作">手工制作 </a></li>
+
+<li><a href="http://www.baidu.com" target="_blank" title="名鞋库">名鞋库 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="上海房产网">上海房产网 </a></li>
+
+<li><a href="http://www.hao123.com/chongwu" target="_blank" title="hao123宠物">hao123宠物 </a></li>
+
+<li><a href="http://www.chinaz.com/" target="_blank" title="站长之家">站长之家 </a></li>
+
+<li><a href="http://www.baidu.com" target="_blank" title="免费发布信息">免费发布信息 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="编制人生">编制人生 </a></li>
+
+<li><a href="https://www.chinapp.com/" target="_blank" title="中国品牌网">中国品牌网 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="加盟网">加盟网 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="慧聪网">慧聪网 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="返利网">返利网 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="五笔输入法">五笔输入法 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="钱香金融">钱香金融 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="旅游网">旅游网 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="网上114">网上114 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="淘狗网">淘狗网 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="发型图片">发型图片 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="重庆人才网">重庆人才网 </a></li>
+
+<li><a href="http://www.jihaoba.com/" target="_blank" title="手机靓号网">手机靓号网 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="手工制作网">手工制作网 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="名鞋网">名鞋网 </a></li>
+
+<li><a href="https://www.z01.com/" target="_blank" title="乐维斯">乐维斯 </a></li>
+
+<li><a href="http://www.baidu.com" target="_blank" title="我要卖狗">我要卖狗 </a></li>
+
+<li><a href="http://www.goushichang.com/" target="_blank" title="狗市场网">狗市场网 </a></li>
+
+<li><a href="http://www.baidu.com" target="_blank" title="狗狗网">狗狗网 </a></li>
+
+<li><a href="http://www.baidu.com" target="_blank" title="我要买狗">我要买狗 </a></li>
+
+</ul>
+</div>
+</section>
+<!--firendsite-->
+
+
+<footer class="container footer">
+<ul>
+	<li><a href="/Item/1.aspx">关于我们</a></li> |
+	<li><a href="/Item/2.aspx">英才招聘</a></li> |
+	<li><a href="/Item/3.aspx">联系我们</a></li> |
+	<li><a href="/Class_8/NodePage.aspx">网站地图</a></li> |
+	<li><a href="/guest/">意见反馈</a></li> |
+	<li><a href="#">帮助中心</a></li> |
+	<li><a href="#">客服热线 0000-88888888</a></li> 
+</ul>
+<p>
+All Rights Reserved | <a href="http://www.miibeian.gov.cn">滇ICP备18002345号 </a>| &copy </a>2018-现在 Goushichang.com 版权所有 <p>免责声明：狗市场站点所有狗狗出售信息系用户发布，其内容的真实性及合法性由发布人自行负责，狗市场不提供任何保证，亦不承担任何法律责任！</p>
+
+
+</p>
+</footer>
+<!--footer end-->
+
+<script>
+var buser = new B_User();//会员ajax登录状态需要结合JS/Controls/B_User.js引用同步生效
+buser.IsLogged(function(data,flag){
+	if(flag){
+		data=JSON.parse(data);
+		$(".top_r ul").prepend('<li><a href="/User/"><i class="fa z01-icon095"></i> [ERR:(GetuserName)解析失败]</a></li> | <li><a href="/User/User/LogOut" ><i class="fa fa-sign-out" aria-hidden="true"></i> 退出</a></li> ');
+		//$(".top_r  .dropdown-toggle").html("<i class='fa fa-user' aria-hidden='true'></i> ")
+	}
+	else{
+		$(".top_r ul").prepend('<li><a href="/User/">登录</a></li>  | <li><a href="/User/Register">注册</a></li>');
+	}
+});
+
+function LogoutFun(){
+	buser.Logout(function(){location=location;});
+}
+
+//顶部导航选择状态
+$(function(){
+$("#bs-example-navbar-collapse-1 li").eq("5").addClass("active");
+})
+</script>
+</body>
+</html>

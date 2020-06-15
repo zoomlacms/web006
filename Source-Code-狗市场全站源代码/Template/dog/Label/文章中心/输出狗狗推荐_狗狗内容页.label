@@ -1,0 +1,34 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>330</LabelID>
+    <LabelName>输出狗狗推荐_狗狗内容页</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>文章中心</LabelCate>
+    <LabelDesc>输出狗狗详细信息</LabelDesc>
+    <LabelParam>Nodeid,1,1,节点ID</LabelParam>
+    <LabelTable>ZL_CommonModel LEFT JOIN ZL_C_dog ON ZL_CommonModel.ItemID=ZL_C_dog.ID</LabelTable>
+    <LabelField>TopImg,Title,price</LabelField>
+    <LabelWhere> ZL_CommonModel.GeneralID=@GID</LabelWhere>
+    <LabelOrder />
+    <LabelContent>&lt;li&gt;
+		&lt;img src="{$CssDir/}Images/dog5.jpg" alt=""&gt;
+		&lt;p&gt;极品萨摩耶在这里，保障纯种和健康、十佳犬&lt;/p&gt;
+		&lt;span&gt;2400元&lt;/span&gt;
+&lt;/li&gt;</LabelContent>
+    <LabelCount>1</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_CommonModel","tb_s":"ZL_C_dog"}</DataSourceType>
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

@@ -1,0 +1,29 @@
+﻿{ZL.Source id="节点栏目信息数据源"/}
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="msapplication-TileColor" content="#1A0066"/>
+<meta name="msapplication-TileImage" content="/images/win8_symbol_140x140.png"/>
+<title>{SField sid="节点栏目信息数据源" FD="NodeName" page="0"/}_{$SiteName/}</title>
+{$MetaKeywords/}
+{$MetaDescription/}
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<script src="/js/scrolltopcontrol.js"></script>
+</head>
+<body>
+{ZL.Label id="全站头部"/}
+
+
+<div  class="container">
+<div class="m_linklist">
+{ZL.Label id="友情链接列表_分页" ShowNum="30" NodeID="{SField sid="节点栏目信息数据源" FD="NodeID" page="0"/}" /}
+</div> 
+</div>
+<!--友情链接 end -->
+
+{ZL.Label id="全站底部"/}
+
+</body>
+</html>

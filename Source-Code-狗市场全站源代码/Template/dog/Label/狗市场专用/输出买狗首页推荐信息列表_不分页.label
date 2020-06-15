@@ -1,0 +1,34 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>344</LabelID>
+    <LabelName>输出买狗首页推荐信息列表_不分页</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>狗市场专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>NodeID,1,1,节点ID|ShopwNum,0,1,显示个数|TitleNum,30,1,标题长度</LabelParam>
+    <LabelTable>ZL_CommonModel LEFT JOIN ZL_C_dog ON ZL_CommonModel.ItemID=ZL_C_dog.ID</LabelTable>
+    <LabelField>OrderID,Title,Topimg,price,times,content,diqu,sex,GeneralID,lei2</LabelField>
+    <LabelWhere>(NodeID=@NodeID or FirstNodeID=@NodeID)
+ And Status=99 And EliteLevel=1</LabelWhere>
+    <LabelOrder>ZL_CommonModel.CreateTime DESC</LabelOrder>
+    <LabelContent>{Repeate}
+&lt;li&gt;&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}"&gt;&lt;img src="{ZL:GetPicUrl({Field="Topimg"/})/}" alt="{Field="Title"/}" onerror="this.onerror=null;this.src='/UploadFiles/nopic.svg'"&gt;&lt;/a&gt;&lt;span&gt;{ZL:CutText({Field="Title"/},@TitleNum,)/}&lt;/span&gt;&lt;small class="m_dogshoplist_jg"&gt;￥ {Field="price"/}&lt;/small&gt;&lt;small class="m_dogshoplist_pj"&gt;品种：{Field="lei2"/}&lt;/small&gt;&lt;/li&gt;
+{/Repeate}</LabelContent>
+    <LabelCount>@ShopwNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>参数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <EmptyContent />
+    <DataSourceType>{"ds_m":"main","ds_s":"main","tb_m":"ZL_CommonModel","tb_s":"ZL_C_dog"}</DataSourceType>
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

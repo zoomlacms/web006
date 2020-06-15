@@ -1,0 +1,377 @@
+﻿@using System.Data
+@using System.Data.SqlClient
+@using ZoomLa.SQLDAL
+@using ZoomLa.BLL
+@using ZoomLa.Model
+@using Newtonsoft.Json
+@using Newtonsoft.Json.Linq
+@using ZoomLaCMS.Models.Field
+@model ZoomLa.Model.M_CommonData
+@{
+    string stopInfo = "", curCate = "";
+    B_User buser = new B_User();
+    M_UserInfo mu = buser.GetLogin();
+    M_Uinfo basemu = buser.GetUserBaseByuserid(mu.UserID);
+    if (Model.GeneralID > 0)
+    {
+        DataTable dt= DBCenter.Sel("ZL_C_dog","ID="+Model.ItemID);
+        if (dt.Rows.Count > 0) { curCate = DataConvert.CStr(dt.Rows[0]["lei2"]); }
+    }
+    DataTable ds = (DataTable)ViewBag.ds;
+    string action = MVCHelper.GetAction("/Extend/ContentAdd.aspx", Request);
+}
+
+@section head{
+<title>信息发布-狗市场网</title>
+<script charset="utf-8" src="/Plugins/Ueditor/ueditor.config.js"></script>
+<script charset="utf-8" src="/Plugins/Ueditor/ueditor.all.min.js"></script>
+<script src="/JS/Modal/APIResult.js"></script>
+<style type="text/css">
+#fd_item_lei2{width:100%;}
+#fd_item_lei2 .fd_item_field {width:100%;}
+#fd_item_lei2 .fd_item_head{float: left;}
+#fd_item_lei2 .fd_item_field{width: 78%;}
+</style>
+@if (Model.ModelID == 50)
+{
+<style type="text/css">
+#txt_ggzt{display:none;}
+#fd_item_ggzt .btn-info{display:none;}
+/*组图字段*/
+.preview_img_ul { list-style: none; margin: 0; padding: 0;min-height:unset; }
+
+.preview_img_ul li { text-align: center; position: relative; display: inline; float: left; margin: 2px; overflow: hidden; font-size: 12px; }
+
+.preview_img_ul li img { padding: 2px; width: 110px; height: 110px; border: 1px solid #ddd; }
+
+.preview_img_ul div.file-panel { position: absolute; height: 0; filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#80000000',endColorstr='#80000000') \0; background: rgba(0, 0, 0, 0.5); width: 100%; top: 0; left: 0; overflow: hidden; z-index: 300; }
+
+.preview_img_ul div.file-panel span { width: 24px; height: 24px; display: inline; float: right; text-indent: -9999px; overflow: hidden; background: url(/Plugins/WebUploader/images/icons.png) no-repeat; margin: 5px 1px 1px; cursor: pointer; }
+
+.preview_img_ul div.file-panel span.choose { background-position: -137px -21px; }
+
+.preview_img_ul div.file-panel span.choose:hover { background-position: -137px 0; }
+
+.preview_img_ul div.file-panel span.cancel { background-position: -48px -24px; }
+
+.preview_img_ul div.file-panel span.cancel:hover { background-position: -48px 0; }
+
+.preview_img_ul div.file-panel span.editpic { background-position: -72px -24px; }
+
+.preview_img_ul div.file-panel span.editpic:hover { background-position: -72px 0; }
+
+#fd_item_ggpz{display: none;}
+
+#fd_item_lei2 div:nth-child(1){width: 10%;}
+#fd_item_lei2 div:nth-child(1) .fd_alias{width: 100%;}
+#fd_item_lei2 .fd_item_field{width: 88%;}
+
+</style>
+    <script>
+        var apiUrl = "/Extend/API.ashx?action=";
+        var id = parseInt("@Model.GeneralID");
+        var groupId = parseInt("@mu.GroupID");
+        var curCate = "@curCate";
+        function disSubmit(text) {
+            var btn = document.getElementById("submit_btn");
+            btn.disabled = true;
+            btn.value = text;
+        }
+        function enableSubmit() {
+            var btn = document.getElementById("submit_btn");
+            btn.disabled = false;
+            btn.value = "立即发布消息";
+        }
+        function WdatePicker() { }
+        function checkCate(lei) {
+            if (curCate == lei) { enableSubmit(); return true; }
+            var json = { "lei": lei };
+            $.post(apiUrl + "cate_check", json, function (data) {
+                var model = APIResult.getModel(data);
+                if (APIResult.isok(model)) { enableSubmit(); }
+                else
+                {
+                    disSubmit(model.retmsg);
+                }
+
+            })
+        }
+        $(function () {
+            $("[name='txt_lei2']").change(function () {
+                checkCate(this.value);
+            });
+            checkCate($("[name='txt_lei2']").val());
+            /*添加狗狗指定省市县*/
+            $("#txt_diqu").val("@basemu.Province,@basemu.City,@basemu.County");
+            document.getElementById("Drop_diqu").onload = function () {
+                setTimeout(function () {
+                    var $ifr = $("#Drop_diqu").contents();
+                    var $province = $ifr.find("#tbProvince");
+                    var $city = $ifr.find("#tbCity");
+                    var $county = $ifr.find("#tbCounty");
+                    //使用用户设置的县市
+                    if (id < 1) {
+                        var config = { province: "@basemu.Province", city: "@basemu.City", county: "@basemu.County" };
+                        document.getElementById("Drop_diqu").contentWindow.setPCC(config);
+                    }
+                    //根据会员组别,限定不可改动的部分
+                    if (groupId <= 1) {
+                        $province.attr("disabled", "disabled");
+                        $city.attr("disabled", "disabled");
+                        $county.attr("disabled", "disabled");
+                    }
+                    else if (groupId == 2) {
+                        $city.attr("disabled", "disabled");
+                        $county.attr("disabled", "disabled");
+                    }
+                    else {
+                        //不限定
+                    }
+
+                }, 50);
+            }
+
+            /*手机框禁止填写*/
+            $("#txt_tel").attr("readonly", "readonly");
+            $("#txt_qq").attr("value", "@basemu.QQ")
+            $("#txt_qq").attr("readonly", "readonly");
+            /*限定有效期为三个月*/
+            if (id < 1) {
+                $("[name='txt_times']").val("@DateTime.Now.AddMonths(3).ToString("yyyy/MM/dd")");
+            }
+            $("[name='txt_times']").attr("readonly", "readonly");
+        })
+
+    </script>
+}
+else
+{
+    <script>
+        function subCheck() { return true; }
+    </script>
+}
+}
+@section content{
+ @MvcHtmlString.Create(Call.GetLabel(" {ZL.Label id=\"全站头部b4\"/}"))
+
+
+<div class="container u_mysite">
+<nav aria-label="breadcrumb" role="navigation">
+  <ol class="breadcrumb">  
+  	<li class="breadcrumb-item">当前位置：</li>
+	<li class="breadcrumb-item"><a title="会员中心" href="/">狗市场</a></li>
+	<li class="breadcrumb-item active"><a href="Mycontent?NodeID=@Model.NodeID">我要卖狗</a></li>
+	<li class="breadcrumb-item hidden">@MvcHtmlString.Create(ViewBag.tip) <a href="javascript:;" title="百度翻译" id="BaiduTrans_a"><i class="fa fa-book"></i></a></li>
+	</ol>
+</nav>
+</div>
+<!--面包屑导航-->
+
+
+
+<div class="container buy_Dog">
+<div class="row">
+<div class="col-sm-8 buy_Dog_l">
+<strong>只需要简单一步完成信息发布</strong>
+<div class="row buy_Dog_form">
+<div class="col-sm-10">
+<form action="@action" method="post">
+<input type="hidden" value="" id="topimg_hid" name="topimg_hid">
+<div class="btn_green addcontent">
+<ul class="nav nav-tabs" hidden>
+    <li class="nav-item active"><a class="nav-link active" href="#Tabs0" data-toggle="tab">内容信息</a></li>
+    <li class="nav-item hidden"><a class="nav-link" href="#Tabs1" data-toggle="tab">补充信息</a></li>
+</ul>
+<div class="tab-content panel-body padding0">
+<div id="Tabs0" class="tab-pane active manage_content">
+<ul class="fd_body">
+    <li class="fd_item">
+	<div class="fd_item_head"><div class="fd_alias">@B_Content.GetFieldAlias("Title", ds)</div><span class="fd_item_req">*</span></div>
+	<div class="fd_item_field">
+	    <input type="text" id="txtTitle" name="Title" value="@Model.Title" class="form-control m715-50 required content_title" title="标题不能为空" onkeyup="isgoEmpty('txtTitle', 'span_txtTitle'); Getpy('txtTitle', 'PYtitle')" />
+	    @*@Html.TextBoxFor(Model => Model.Title, new { @style = "", @class = "form-control m715-50 content_title", onkeyup = "isgoEmpty('Title','span_txtTitle');Getpy('Title','PYtitle')" })*@
+	    <a href="javascript:;" class="btn btn-info btn-sm hidden" onclick="ShowTitle()"><i class="fa fa-info"></i>标题属性</a>
+	    <button type="button" class="btn btn-info btn-sm hidden" onclick="ShowSys();"><i class="fa fa-list"></i></button>
+	    <span id="span_txtTitle" name="span_txtTitle" style="display:none;"></span>
+	    <input type="hidden" id="ThreadStyle" name="TitleStyle" value="@Model.TitleStyle" />
+	</div>
+    </li>
+    @Html.Partial("Fields/Index_User_AddContent", new VM_FieldModel(Model.ModelID, Model.NodeID, new ModelConfig() { Source = ModelConfig.SType.UserContent }, Model.GeneralID))
+    <li class="fd_item hidden">
+	<div class="fd_item_head">主编辑器扩展图:</div>
+	<div class="fd_item_field">
+	    <ul id="ThumImg_ul" class="preview_img_ul">
+		<div class="clearfix"></div>
+	    </ul>
+	    <input type="hidden" id="ThumImg_Hid" name="ThumImg_Hid" value="@Model.TopImg" />
+	</div>
+    </li>
+</ul>
+</div>
+<div id="Tabs1" class="tab-pane">
+<ul class="fd_body">
+    <li class="fd_item">
+	<div class="fd_item_head"><div class="fd_alias">@B_Content.GetFieldAlias("PYtitle", ds)</div></div>
+	<div class="fd_item_field"><input type="text" id="PYtitle" name="PYtitle" class="form-control m715-50" value="@Model.PYtitle" /></div>
+    </li>
+    <li class="fd_item">
+	<div class="fd_item_head"><div class="fd_alias">@B_Content.GetFieldAlias("TagKey", ds)</div></div>
+	<div class="fd_item_field">
+        <div id="OAkeyword" class="border border-secondary w_20rem"></div>
+        <input type="text" id="Keywords" class="none" name="Keywords" value="@Model.TagKey" class="form-control" />
+        <small class="text-muted">(空格或回车键分隔，长度不超过10字符或5汉字)</small>
+	</div>
+    </li>
+    <li class="fd_item">
+	<div class="fd_item_head"><div class="fd_alias">@B_Content.GetFieldAlias("Subtitle", ds)</div></div>
+	<div class="fd_item_field"><input type="text" id="Subtitle" name="Subtitle" class="form-control m715-50" value="@Model.Subtitle" /></div>
+    </li>
+</ul>
+</div>
+</div>
+<div class="text-center add_Dog_btn">
+    @if (string.IsNullOrEmpty(stopInfo))
+    {
+        <input id="submit_btn" type="submit" class="btn btn-info" value="立即发布消息" />
+    }
+    else
+    {
+        <button type="button" class="btn btn-secondary disable" disabled="disabled">@stopInfo</button>
+    }
+    <a href="MyContent?NodeID=@Model.NodeID" class="btn btn-info hidden">返回列表</a>
+</div>
+</div>
+</form><!--form end-->
+</div>
+<div class="col-sm-2 buy_Dog_form_r">
+<small>10~30字符</small>
+</div>
+</div>
+</div>
+
+<div class="col-sm-4 buy_Dog_r">
+<div class="buy_Dog_bor">
+<strong>发布提示</strong>
+<ul>
+<li>1.为共建真实可信的专业服务平台，禁言发虚假及与狗狗出售无关胡信息，违者删帖，严重者封号！</li>
+<li>2.一个品种只能发一条信息，如有多个品种请按不同种类分别发布！</li>
+<li>3.请不要在标题里添加特殊字符，标题长度控制在10-25个字符，违者禁言！</li>
+<li>4.请不要重复发布信息，感谢您的配合！</li>
+</ul>
+<span>发布遇到问题请与管理员联系（QQ:861803311）</span>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="login_Footer">
+@MvcHtmlString.Create(Call.GetLabel("{ZL.Label id=\"全站底部\"/}"))
+</div>
+<!--footer end-->
+
+<script>
+$(function(){
+//导航处理
+	$("#usernav1 ul li").removeClass("active").siblings().eq(1).addClass("active");
+})
+</script>
+}
+@section script{
+<script>
+    var zlconfig = {
+        adminPath: "@CustomerPageAction.customPath2",
+    updir: "@ZoomLa.Components.SiteConfig.SiteOption.UploadDir.ToLower()",
+    duptitlenum: "@ZoomLa.Components.SiteConfig.SiteOption.DupTitleNum",
+    modelid: "@Model.ModelID"
+};
+</script>
+<script src="/JS/OAKeyWord.js"></script>
+@*<script src="/JS/DatePicker/WdatePicker.js"></script>*@
+<script src="/JS/chinese.js"></script>
+<script src="/JS/Common.js"></script>
+<script src="/JS/Controls/ZL_Dialog.js"></script>
+<script src="/JS/ICMS/tags.json"></script>
+<script src="/JS/ZL_Content.js?v=20160514"></script>
+<script src="/JS/Plugs/transtool.js"></script>
+<script src="/JS/Controls/B_User.js"></script>
+<script>
+    var buser = new B_User();//会员ajax登录状态需要结合JS/Controls/B_User.js引用同步生效
+    buser.IsLogged(function(data,flag){
+        if(flag){
+            data=JSON.parse(data);
+            $(".top_r ul").prepend('<li><a href="/User/"><i class="fa z01-icon095"></i>@MvcHtmlString.Create(Call.GetLabel("{ZL:GetuserName()/}"))</a></li> | <li><a href="/User/User/LogOut" ><i class="fa fa-sign-out" aria-hidden="true"></i> 退出</a></li> ');
+            //$(".top_r  .dropdown-toggle").html("<i class='fa fa-user' aria-hidden='true'></i> ")
+        }
+        else{
+            $(".top_r ul").prepend('<li><a href="/User/">登录</a></li>  | <li><a href="/User/Register">注册</a></li>');
+        }
+    });
+
+
+    function LogoutFun(){
+        buser.Logout(function(){location=location;});
+    }
+	
+/*导航状态*/
+  $("#navmg").addClass("active")  
+	
+	
+/*获取当前用户的电话*/
+var phone="@MvcHtmlString.Create(Call.GetLabel("{ZL.Label id=\"获取当前用户的电话\" /}"))";
+$("#txt_tel").val(phone);
+  
+    $(function () {
+        Tlp_initTemp();
+        $("#BaiduTrans_a").TransTools({ top: 120 });
+        $("#txt_Edit,#txt_pages").parents("tr").hide();
+        $("form").validate();
+    });
+    function OnTemplateViewCheck(value) { $("#TxtTemplate_hid").val(value); }
+
+    /*如果是信息发布页面*/
+
+    var ModeID="@MvcHtmlString.Create(Call.GetLabel("{$GetUrldecode({$GetRequest(ModelID)$})$}"))";
+    if(ModeID=="2"){
+        $("#fd_item_synopsis").css("display","none");
+        $("#fd_item_pages").css("display","none");
+        $("#fd_item_pic").css("display","none");
+        $("#fd_item_grouppic").css("display","none");
+        $("#fd_item_source").css("display","none");
+        $("#fd_item_Edit").css("display","none");
+        $("#fd_item_author").css("display","none");
+        $(".buy_Dog_form_r").css("display","none");
+        $("#fd_item_content").css("width","100%");
+        $("#fd_item_content .fd_item_head").css("display","block")
+    }
+	
+	function GetTopImg() {
+	var id="txt_content";
+    if ($("#"+id).length < 1) { console.log("GetTopImg", id + "不存在"); return; }
+    var editor = UE.getEditor(id);
+    editor.addListener("afterPaste contentChange", function () {
+        setTimeout(function () {
+            loadImg(editor);
+        }, 500);
+        setTimeout(BindAttachEvent, 500);
+    });
+    setTimeout(function () { loadImg(editor); })
+  }
+
+//主编辑器扩展图
+function loadImg(editor) {
+    var html = editor.getContent();
+    var $imgs = $(html).find("img");
+	if($imgs.length>0){console.log($($imgs[0]).attr("src"));
+	$("#topimg_hid").val($($imgs[0]).attr("src"));
+	}
+}
+setTimeout(function(){
+GetTopImg();
+
+},3000);
+	
+</script>
+}

@@ -1,0 +1,110 @@
+﻿@using ZoomLaCMS.Models.Ask
+@using ZoomLa.BLL
+@{
+    Layout = "~/Views/Shared/_ask.cshtml";
+    VM_AskInfo vmask = new VM_AskInfo();
+}
+@functions{
+    B_User buser = new B_User();
+    protected string getstyle()
+    {
+        if (buser.CheckLogin())
+        {
+            return "display:inherit";
+        }
+        else return "display:none";
+    }
+}
+@section head{
+    <title> 成功提示-@(Call.SiteName)问答</title>
+}
+@section content{
+     <style>#ask_top{display: none;}.qatop{display: none;}.ask_two-nav{display: none;}</style>
+	 <link href="/Template/dog/style/global.css" rel="stylesheet"/>
+	 
+	 @MvcHtmlString.Create(Call.GetLabel(" {ZL.Label id=\"全站头部b4\"/}"))
+
+
+   <div class="container breadcrumb_Nav">
+		<nav aria-label="breadcrumb" role="navigation" class="qaCenter_breadcrumb">
+			<ol class="breadcrumb">
+			<li class="breadcrumb-item">当前位置：<a href="/">狗市场</a></li>
+            <li class="breadcrumb-item"><a href="@MvcHtmlString.Create(Call.GetLabel("{ZL:GetNodeLinkUrl(22)/}"))">问答中心</a></li>
+            <li class="breadcrumb-item" class="active">提问成功</li>
+			</ol>
+		</nav>
+	 </div>
+		<!--面包屑导航 end-->
+		
+
+    <div class="container wd_Addsuccess">
+        <div class="header">
+            @Html.Action("commonview")
+        </div>
+
+        @if (ViewBag.conflogin)
+        {
+            <div class="rg_inout msg" id="main">
+                <h2 class="f-yahei">您的问题我们已经收到！请耐心等待网友的回答：）</h2>
+                <div class="submit-fallback">
+                    <h3 class="f-yahei">知恩图报，别忘了及时推荐为满意回答哦~</h3>
+                    <a href="@MvcHtmlString.Create(Call.GetLabel("{ZL:GetNodeLinkUrl(22)/}"))" title="查看问题" class="btn btn-info">好，一定</a>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div id="NoUser_div">
+                <h3 class="f-yahei">提示：当前为[匿名提问模式]，系统总共注册会员数@(vmask.UserCount)人。</h3>
+                <div class="submit-fallback">
+                    <h3 class="f-yahei">知恩图报，别忘了及时推荐为满意回答哦~</h3>
+                    <a href="@MvcHtmlString.Create(Call.GetLabel("{ZL:GetNodeLinkUrl(22)/}"))" title="查看问题" class="btn btn-info">好，一定</a>
+                </div>
+            </div>
+        }
+
+    </div>
+    <div class="ask_bottom">
+        <p class="text-center"><a target="_blank" title="如何提问" href="http://help.z01.com/?index/help.html#如何提问">如何提问</a> <a target="_blank" title="如何回答" href="http://help.z01.com/?index/help.html#如何回答">如何回答</a> <a target="_blank" title="如何获得积分" href="http://help.z01.com/?index/help.html#如何获得积分">如何获得积分</a> <a target="_blank" title="如何处理问题" href="http://help.z01.com/?index/help.html#如何处理问题">如何处理问题</a></p>
+        <p class="text-center">@MvcHtmlString.Create(Call.GetLabel("{$Copyright/}"))</p>
+    </div>
+	
+	<div class="login_Footer">
+	@MvcHtmlString.Create(Call.GetLabel("{ZL.Label id=\"全站底部\"/}"))
+	</div>
+	<!--footer end-->
+
+}
+@section script{
+	 <script src="/JS/Controls/B_User.js"></script>
+    <script>
+	    $(function(){
+		   $("#navwd22").addClass("active");
+		})
+		
+        function show() {
+            var div = document.getElementById("show");
+            if (div.style.display == "none") {
+                div.style.display = "block";
+            }
+        }
+		
+		  	var buser = new B_User();//会员ajax登录状态需要结合JS/Controls/B_User.js引用同步生效
+		buser.IsLogged(function(data,flag){
+			if(flag){
+				data=JSON.parse(data);
+				$(".top_r ul").prepend('<li><a href="/User/"><i class="fa z01-icon095"></i>@MvcHtmlString.Create(Call.GetLabel("{ZL:GetuserName()/}"))</a></li> | <li><a href="/User/User/LogOut" ><i class="fa fa-sign-out" aria-hidden="true"></i> 退出</a></li> ');
+				//$(".top_r  .dropdown-toggle").html("<i class='fa fa-user' aria-hidden='true'></i> ")
+			}
+			else{
+				$(".top_r ul").prepend('<li><a href="/User/">登录</a></li>  | <li><a href="/User/Register">注册</a></li>');
+			}
+		});
+
+
+		function LogoutFun(){
+			buser.Logout(function(){location=location;});
+		}
+
+    </script>
+}

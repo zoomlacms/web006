@@ -1,0 +1,214 @@
+{ZL.Source id="狗产品库数据源标签" /}<!DOCTYPEHTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{SField sid="狗产品库数据源标签" FD="Title" page="0"/}</title>
+<meta name="Keywords" content="{SField sid="狗产品库数据源标签" FD="Tagkey" page="0" /}">
+{$MetaKeywords/}
+{$MetaDescription/}
+{ZL:Boot()/}
+<script src="/dist/js/swiper.min.js"></script>
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<script src="/js/scrolltopcontrol.js"></script>
+<script src="/JS/Controls/B_User.js"></script>
+<link href="/dist/css/swiper.min.css" rel="stylesheet"/>
+</head>
+<body>
+{ZL.Label id="全站头部"/}
+
+
+
+<div class="container">
+<!--{ZL.Label id="狗产品库内容解析_自动获得所有字段内容值" /} -->
+<!--    {  ZL.Label id="新模型内容解析_自动获得所有字段内容值" /} -->
+
+<!--{ZL.Label id="输出狗狗详细信息" /}-->
+</div> 
+
+<div class="container my_Bread">
+<nav aria-label="breadcrumb" role="navigation" >
+<ol class="breadcrumb">
+<li class="breadcrumb-item">当前位置：</li>
+<li class="breadcrumb-item"><a href="/">狗市场</a></li>
+<li class="breadcrumb-item">{ZL:SplitWord({SField sid="狗产品库数据源标签" FD="diqu" page="0"/},,,0)/}{SField sid="狗产品库数据源标签" FD="lei2" page="0"/}</li>
+
+</ol>
+</nav>
+</div>
+<!--面包屑 end-->
+
+<div class="container shop_content">
+<div class="row">
+<div class="col-xs-12 col-md-5 shop_content_l">
+<div class="view shop_main_thumbnail">
+<div class="swiper-container swiper-container-horizontal"> <a class="arrow-left" href="javascript:;"><i class="fa fa-angle-left" aria-hidden="true"></i></a> <a class="arrow-right" href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+<div class="swiper-wrapper info_warp_t" style="transform: translate3d(-1221px, 0px, 0px); transition-duration: 0ms;" id="Dog_com_img1">
+<div class="swiper-slide" style="width: 407px;"> <a href="javascript:;" ><img src="{ZL:GetPicUrl({SField sid="狗产品库数据源标签" FD="TopImg" page="0"/})/}" alt=""></a> </div>
+
+</div>
+</div>
+</div>
+<div class="preview thumbnail_box"> <a class="arrow-left" href="javascript:;"><i class="fa fa-angle-left" aria-hidden="true"></i></a> <a class="arrow-right" href="javascript:;"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+<div class="swiper-container swiper-container-horizontal">
+<div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;" id="Dog_com_img">
+
+
+</div>
+</div>
+</div>
+<script>
+		var photos='{SField sid="狗产品库数据源标签" FD="ggzt" page="0"/}';
+		var pho = eval(photos);
+		var strhtml="";
+		var strhtml1="";
+		for(var i=0;i<pho.length;i++)
+		{
+			siteurl="{$UploadDir/}";
+			strhtml+="<div class='swiper-slide thumbnail_list'> <img src=\""+siteurl+pho[i].url+"\" alt=\""+pho[i].desc+"\" /> </div>"
+			strhtml1+="<div class='swiper-slide' style='width: 407px;'> <a href='javascript:;' ><img src=\""+siteurl+pho[i].url+"\" alt=\""+pho[i].desc+"\" /></a> </div>"
+		}
+	  $("#Dog_com_img").append(strhtml);
+	  $("#Dog_com_img1").append(strhtml1);
+</script>	
+	
+</div>
+
+
+<div class="col-xs-12 col-md-5 shop_content_c">
+<h1>{SField sid="狗产品库数据源标签" FD="Title" page="0"/}</h1>
+<div class="s_Price_box">
+<p>均价：<strong>￥{SField sid="狗产品库数据源标签" FD="price" page="0"/}</strong> <span id="Hits">浏览数：<SCRIPT language=javascript src="/Common/GetHits.aspx?id={SField sid="狗产品库数据源标签" FD="GeneralID" page="0"/}"></SCRIPT> </span></p>
+<p>卖家承诺：{SField sid="狗产品库数据源标签" FD="fwbz" page="0"/}</p>
+</div>
+<div class="dog_deta">
+<p><span class="dog_deta_l">狗狗品种：<strong>{SField sid="狗产品库数据源标签" FD="lei2" page="0"/}</strong></span><span class="dog_deta_r">待售犬只：<strong>{SField sid="狗产品库数据源标签" FD="dsqz" page="0"/}</strong></span></p>
+<p><span class="dog_deta_l">狗狗性别：<strong>{SField sid="狗产品库数据源标签" FD="sex" page="0"/}</strong></span><span class="dog_deta_r">疫苗情况：<strong>{SField sid="狗产品库数据源标签" FD="ymzk" page="0"/}</strong></span></p>
+<p><span class="dog_deta_l">狗狗年龄：<strong>{SField sid="狗产品库数据源标签" FD="ql" page="0"/}</strong></span><span class="dog_deta_r">驱虫情况：<strong>{SField sid="狗产品库数据源标签" FD="qu" page="0"/}</strong></span></p>
+<p><span class="dog_deta_l">能否视频：<strong>{SField sid="狗产品库数据源标签" FD="video" page="0"/}</strong></span><span class="dog_deta_r">有效期：<strong class="con_time">{SField sid="狗产品库数据源标签" FD="times" page="0"/}</strong></span></p>
+</div>
+<div class="dog_deta">
+<p><span class="dog_deta_l">联系人：<strong>{SField sid="狗产品库数据源标签" FD="ren" page="0"/}</strong></span><span class="dog_deta_r">所在地区：<strong>{SField sid="狗产品库数据源标签" FD="diqu" page="0"/}</strong></span></p>
+<p><span class="dog_deta_l">联系电话：<strong>{SField sid="狗产品库数据源标签" FD="tel" page="0"/}</strong></span><span class="dog_deta_r">异地运费：<strong> {SField sid="狗产品库数据源标签" FD="fei" page="0"/}</strong></span></p>
+<p><span class="dog_deta_l">微信账号：<strong>{SField sid="狗产品库数据源标签" FD="tel" page="0"/}</strong></span><span class="dog_deta_r">联系Q Q：<strong><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={Field="qq"/}&site={Field="qq"/}&menu=yes">{SField sid="狗产品库数据源标签" FD="qq" page="0"/}</a></strong></span></p>
+</div>
+<div class="s_statement">
+<p>1.请您联系说："狗市场(www.goushichang.com)看到的",谢谢！</p>
+<p>2.该信息由用户自行发布，其真实性，合法性由发布人负责，狗市场不提供任何保证，也不承担任何法律责任！</p>
+</div>
+</div>
+
+<div class="col-xs-12 col-md-2 shop_content_r">
+{ZL.Label id="获取狗产品内容页登录发布用户信息" UserName="{SField sid="狗产品库数据源标签" FD="Inputer" page="0"/}" diqu="{ZL:SplitWord({SField sid="狗产品库数据源标签" FD="diqu" page="0"/},,,1)/}
+</div>
+
+</div>
+
+<div class="row shop_detailed">
+<div class="col-xs-12 shop_detailed_title">
+<span>卖家描述与狗狗介绍</span>
+</div>
+<div class="shop_detailed_l col-xs-12 col-md-10">{SField sid="狗产品库数据源标签" FD="content" page="0"/}</div>
+<div class="shop_detailed_r col-xs-12 col-md-2">
+<h4>本类推荐</h4>
+
+
+
+{ZL.Label id="根据用户名统计该用户的发帖总数" UserName="{SField sid="狗产品库数据源标签" FD="Inputer" page="0"/}" /}
+<ul>
+<!--
+	<li>
+		<a href=""><img src="{$CssDir/}Images/dog5.jpg" alt=""></a>
+		<p><a href="#">极品萨摩耶在这里，保障纯种和健康、十佳犬</a></p>
+		<span>价格：￥2400</span>
+	</li>
+-->
+{ZL.Label id="输出商品页右侧推荐_狗狗" NodeID="1" ShowNum="3" Lei="{SField sid="狗产品库数据源标签" FD="lei2" page="0"/}" /}
+</ul>
+</div>
+</div>
+</div>
+
+
+{ZL.Label id="全站底部"/}
+
+<script>
+
+	$(function(){
+	$("#bs-example-navbar-collapse-1 li").eq("1").addClass("active");
+	})
+
+var buser = new B_User();//会员ajax登录状态需要结合JS/Controls/B_User.js引用同步生效
+buser.IsLogged(function(data,flag){
+	if(flag){
+		data=JSON.parse(data);
+			$(".top_r ul").prepend('<li><a href="/User/"><i class="fa z01-icon095"></i> {ZL:GetuserName()/}</a></li> | <li><a href="/User/User/LogOut" ><i class="fa fa-sign-out" aria-hidden="true"></i> 退出</a></li> ');
+		//$(".top_r  .dropdown-toggle").html("<i class='fa fa-user' aria-hidden='true'></i> ")
+	}
+	else{
+		$(".top_r ul").append(' <li><a href="/User/Register">注册</a></li> | <li><a href="/User/">登录</a></li>');
+	}
+});
+
+function LogoutFun(){
+	buser.Logout(function(){location=location;});
+}
+
+	
+
+	
+		
+var viewSwiper = new Swiper('.view .swiper-container', {
+	on:{
+		slideChangeTransitionStart: function() {
+		    updateNavPosition()
+	    }
+	}
+})
+
+$('.view .arrow-left,.preview .arrow-left').on('click', function(e) {
+	e.preventDefault()
+	if (viewSwiper.activeIndex == 0) {
+		viewSwiper.slideTo(viewSwiper.slides.length - 1, 1000);
+		return
+	}
+	viewSwiper.slidePrev()
+})
+$('.view .arrow-right,.preview .arrow-right').on('click', function(e) {
+	e.preventDefault()
+	if (viewSwiper.activeIndex == viewSwiper.slides.length - 1) {
+		viewSwiper.slideTo(0, 1000);
+		return
+	}
+	viewSwiper.slideNext()
+})
+
+var previewSwiper = new Swiper('.preview .swiper-container', {
+	//visibilityFullFit: true,
+	slidesPerView: 'auto',
+	allowTouchMove: false,
+	on:{
+		tap: function() {
+		    viewSwiper.slideTo(previewSwiper.clickedIndex)
+	  }
+	}
+})
+
+function updateNavPosition() {
+		$('.preview .active-nav').removeClass('active-nav')
+		var activeNav = $('.preview .swiper-slide').eq(viewSwiper.activeIndex).addClass('active-nav')
+		if (!activeNav.hasClass('swiper-slide-visible')) {
+			if (activeNav.index() > previewSwiper.activeIndex) {
+				var thumbsPerNav = Math.floor(previewSwiper.width / activeNav.width()) - 1
+				previewSwiper.slideTo(activeNav.index() - thumbsPerNav)
+			} else {
+				previewSwiper.slideTo(activeNav.index())
+			}
+		}
+	}	
+	
+	
+
+
+</script>
+</body>
+</html>
